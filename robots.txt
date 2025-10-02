@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block admin or backend pages (optional – only if you have them)
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /cgi-bin/
+
+# Sitemap location
+Sitemap: https://www.consumeit.in/sitemap.xml
