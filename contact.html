@@ -263,52 +263,68 @@
                             <div class="col-lg-6 wow fadeInUp">
                                 <div class="map-items">
                                     <div class="googpemap">
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55892.74737123214!2d76.5751354171449!3d28.88952978427189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d85a5414251a5%3A0x9f011cc2777a4544!2sRohtak%2C%20Haryana!5e0!3m2!1sen!2sin!4v1758347754126!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55892.74737123214!2d76.5751354171449!3d28.88952978427189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d85a5414251a5%3A0x9f011cc2777a4544!2sRohtak%2C%20Haryana!5e0!3m2!1sen!2sin!4v1758347754126!5m2!1sen!2sin"
+                                            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="contact-content">
                                     <h3 class="wow fadeInUp">Ready to Get Started?</h3>
-                                    <form id="contact-form" method="POST" class="contact-form-items">
+                                    <form
+                                        action="https://docs.google.com/forms/d/e/1FAIpQLSeXUsr3gL8vuLO3BywFjcKf1bv2zEcTUzVIOi20ddZpXDLlqA/formResponse"
+                                        method="POST" target="_blank" class="contact-form-items">
+
                                         <div class="row g-4">
+
                                             <div class="col-lg-6">
                                                 <div class="form-clt">
                                                     <span>First name*</span>
-                                                    <input type="text" id="fname" placeholder="Enter Your First Name">
+                                                    <input type="text" name="entry.829243146"
+                                                        placeholder="Enter Your First Name" required>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-6">
                                                 <div class="form-clt">
                                                     <span>Last name*</span>
-                                                    <input type="text" id="lname" placeholder="Enter Your Last Name">
+                                                    <input type="text" name="entry.694283744"
+                                                        placeholder="Enter Your Last Name" required>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-6">
                                                 <div class="form-clt">
                                                     <span>Phone Number*</span>
-                                                    <input type="text" id="phone" placeholder="Enter Your Phone Number">
+                                                    <input type="text" name="entry.886178287"
+                                                        placeholder="Enter Your Phone Number" required>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-6">
                                                 <div class="form-clt">
                                                     <span>Email address*</span>
-                                                    <input type="email" id="email"
-                                                        placeholder="Enter Your Email address">
+                                                    <input type="email" name="entry.614083670"
+                                                        placeholder="Enter Your Email address" required>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-12">
                                                 <div class="form-clt">
                                                     <span>Message*</span>
-                                                    <textarea id="message"
-                                                        placeholder="Write your message......"></textarea>
+                                                    <textarea name="entry.1785648272"
+                                                        placeholder="Write your message......" required></textarea>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-7">
                                                 <button type="submit" class="theme-btn">Submit request</button>
                                             </div>
+
                                         </div>
                                     </form>
+
                                 </div>
                             </div>
                         </div>
@@ -320,7 +336,8 @@
             <section class="cta-section fix section-padding pt-0 dark-bg-style black-bg">
                 <div class="container">
                     <div class="cta-wrapper bg-cover" style="background-image: url('assets/img/cta/cta-bg.jpg');">
-                        <h2 class="wow fadeInUp" data-wow-delay=".3s">Have an idea in your mind?Let’s make something great together</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">Have an idea in your mind?Let’s make something
+                            great together</h2>
                         <a href="contact.html" class="theme-btn border-white wow fadeInUp" data-wow-delay=".5s">
                             <span class="icon-1">
                                 <img src="assets/img/icon/10.svg" alt="img">
@@ -333,27 +350,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Submission Result Modal (Bootstrap 5) -->
-            <div class="modal fade" id="submitResultModal" tabindex="-1" aria-labelledby="submitResultModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="submitResultModalLabel">Submission status</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body" id="submitResultMessage">
-                            <!-- JS will insert the message here -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <a id="submitResultCTA" href="contact.html" class="btn btn-primary" style="display:none;">Go
-                                to Contact</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 
             <!-- Footer Section Start -->
             <footer class="footer-section dark-section-bg">
@@ -380,95 +376,21 @@
     </div>
 
     <script>
-        (function () {
-            // ---- CONFIG - replace these BEFORE publishing ----
-            const FORM_ID = "1FAIpQLSeo_dYOeF92-XoJTbK9qhCoQNWZIsYQdNv3hFZSz6_Doipufg"; 
-            // Map these entry keys to the correct Google Form entry IDs from your form's HTML
-            const ENTRY_FULLNAME = "entry.111111"; // replace
-            const ENTRY_PHONE = "entry.222222"; // replace
-            const ENTRY_EMAIL = "entry.333333"; // replace
-            const ENTRY_MESSAGE = "entry.444444"; // replace
-            // --------------------------------------------------
-
-            const googleFormURL = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
-
-            // Helper: show bootstrap modal with message
-            function showModal(title, msg, showCTA = false) {
-                const modalEl = document.getElementById('submitResultModal');
-                if (!modalEl) {
-                    alert(title + "\n\n" + msg); // fallback if modal missing
-                    return;
-                }
-                document.getElementById('submitResultModalLabel').innerText = title;
-                document.getElementById('submitResultMessage').innerText = msg;
-                const cta = document.getElementById('submitResultCTA');
-                if (showCTA) {
-                    cta.style.display = 'inline-block';
-                } else {
-                    cta.style.display = 'none';
-                }
-                // Bootstrap 5 modal show
-                const modal = new bootstrap.Modal(modalEl);
-                modal.show();
-            }
-
-            // Basic client-side validation
-            function validate({ firstName, lastName, phone, email, message }) {
-                if (!firstName) return "Please enter your first name.";
-                if (!email) return "Please enter your email address.";
-                // basic email regex (simple)
-                const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRe.test(email)) return "Please enter a valid email address.";
-                // optional: phone length check
-                if (phone && phone.length < 7) return "Please enter a valid phone number.";
-                if (!message) return "Please enter your message or project details.";
-                return null;
-            }
-
-            // On submit
-            document.getElementById("contact-form").addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                // Collect values and trim
-                const firstName = document.getElementById("fname").value.trim();
-                const lastName = document.getElementById("lname").value.trim();
-                const fullName = firstName + (lastName ? " " + lastName : "");
-                const phone = document.getElementById("phone").value.trim();
-                const email = document.getElementById("email").value.trim();
-                const message = document.getElementById("message").value.trim();
-
-                // Validate
-                const validationError = validate({ firstName, lastName, phone, email, message });
-                if (validationError) {
-                    showModal("Validation error", validationError);
-                    return;
-                }
-
-                // Build form data with correct entry keys
-                const formData = new FormData();
-                formData.append(ENTRY_FULLNAME, fullName);
-                formData.append(ENTRY_PHONE, phone);
-                formData.append(ENTRY_EMAIL, email);
-                formData.append(ENTRY_MESSAGE, message);
-
-                // Send to Google Forms - using no-cors (can't read response)
-                fetch(googleFormURL, {
-                    method: "POST",
-                    mode: "no-cors",
-                    body: formData
-                })
-                    .then(() => {
-                        // With no-cors we can't inspect the response; assume success.
-                        showModal("Thank you!", "✅ Your message has been submitted successfully. We will contact you soon.", true);
-                        document.getElementById("contact-form").reset();
-                    })
-                    .catch((err) => {
-                        // Network failure probably
-                        console.error("Form submit error:", err);
-                        showModal("Submission failed", "❌ Something went wrong. Please try again or email us directly at consumeit.services@gmail.com.");
-                    });
+        document.querySelector('.contact-form-items').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                mode: 'no-cors'
+            }).then(() => {
+                alert('✅ Thank you! Your message has been sent successfully.');
+                form.reset();
+            }).catch((error) => {
+                alert('❌ Something went wrong. Please try again.');
+                console.error(error);
             });
-        })();
+        });
     </script>
 
 
