@@ -40,6 +40,7 @@
     <meta name="twitter:description"
         content="Reach out to ConsumeIT for web development, SEO, social media, AI automation, and advertising solutions. Let's grow your business together.">
     <meta name="twitter:image" content="https://www.consumeit.in/assets/img/og-image.jpg">
+    <meta name="twitter:site" content="@consumeitx">
 
     <!--<< Favcion >>-->
     <link rel="icon" href="/assets/img/favicon/favicon-48.png" type="image/png" sizes="48x48">
@@ -61,8 +62,114 @@
     <link rel="stylesheet" href="assets/css/tabler-icons.min.css">
     <link rel="stylesheet" href="assets/css/color.css">
     <link rel="stylesheet" href="assets/css/main.css">
-</head>
 
+    <style>
+
+        :root {
+            /* Brand Colors */
+            --primary-navy: #1a365d;
+            --secondary-blue: #3182ce;
+            --accent-orange: #17012C;
+            --white: #ffffff;
+            --light-gray: #F8F8F8;
+            --dark-gray: #2d3748;
+            --medium-gray: #718096;
+            --border-gray: #e2e8f0;
+            --success-green: #38a169;
+            
+            /* Typography */
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+        }
+
+
+        .services {
+            background: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .service-card {
+            background: var(--light-gray);
+            border: 2px solid var(--border-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            transition: var(--transition-normal);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            border-color: var(--secondary-blue);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            margin-right: var(--space-md);
+        }
+        
+        .service-name {
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-navy);
+        }
+        
+        .service-value {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: var(--font-weight-medium);
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-sm);
+        }
+        
+        .service-description {
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+    </style>
+</head>
 <body>
 
     <!-- Back To Top Start -->
@@ -230,7 +337,7 @@
                             <div class="pricing-box-items">
                                 <div class="pricing-header">
                                     <h3>Business Owner Starter Plan</h3>
-                                    <h2>₹50,000</h2>
+                                    <h2>₹59,999</h2>
                                     <p>From Zero to Digital Hero</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -253,7 +360,7 @@
                             <div class="pricing-box-items active">
                                 <div class="pricing-header">
                                     <h3>Content Creator Starter Plan</h3>
-                                    <h2>₹30,000</h2>
+                                    <h2>₹39,999</h2>
                                     <p>Your First Step to Content Stardom</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -285,7 +392,7 @@
                             <div class="pricing-box-items">
                                 <div class="pricing-header">
                                     <h3>Basic Plan</h3>
-                                    <h2>₹25,000 <sub>/month</sub></h2>
+                                    <h2>₹29,999 <sub>/month</sub></h2>
                                     <p>Steady Growth, Solid Foundation</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -308,7 +415,7 @@
                             <div class="pricing-box-items active">
                                 <div class="pricing-header">
                                     <h3>Intermediate Plan</h3>
-                                    <h2>₹35,000 <sub>/month</sub></h2>
+                                    <h2>₹44,999 <sub>/month</sub></h2>
                                     <p>Accelerated Growth Mode</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -330,7 +437,7 @@
                             <div class="pricing-box-items">
                                 <div class="pricing-header">
                                     <h3>Advance Plan</h3>
-                                    <h2>₹50,000 <sub>/month</sub></h2>
+                                    <h2>₹59,999 <sub>/month</sub></h2>
                                     <p>The Headache-Free Success Package</p>
                                     <!-- <span class="badge bg-warning text-dark">Most Popular</span> -->
                                 </div>
@@ -363,7 +470,7 @@
                             <div class="pricing-box-items">
                                 <div class="pricing-header">
                                     <h3>Essential Social Media</h3>
-                                    <h2>₹10,000 <sub>/month</sub></h2>
+                                    <h2>₹14,999 <sub>/month</sub></h2>
                                     <p>Consistent Brand Building</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -389,7 +496,7 @@
                             <div class="pricing-box-items active">
                                 <div class="pricing-header">
                                     <h3>Premium Social Media</h3>
-                                    <h2>₹20,000 <sub>/month</sub></h2>
+                                    <h2>₹24,999 <sub>/month</sub></h2>
                                     <p>Complete Social Media Dominance</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -427,7 +534,7 @@
                                 <div class="pricing-header">
                                     <h3>📱 Meta Ads Management</h3>
                                     <h4>Facebook & Instagram Advertising</h4>
-                                    <h2>₹5,000 <sub>/month</sub></h2>
+                                    <h2>₹7,999 <sub>/month</sub></h2>
                                 </div>
                                 <ul class="pricing-list">
                                     <li>Professional Ad Design Creation</li>
@@ -453,7 +560,7 @@
                                 <div class="pricing-header">
                                     <h3>🔍 Google Ads Management</h3>
                                     <h4>Search Engine Advertising</h4>
-                                    <h2>₹5,000 <sub>/month</sub></h2>
+                                    <h2>₹7,999 <sub>/month</sub></h2>
                                 </div>
                                 <ul class="pricing-list">
                                     <li>Professional Ad Copy Creation</li>
@@ -477,88 +584,89 @@
 
                 <div class="container mb-4">
                     <div class="section-header text-center">
-                        <h2 class="section-title">Website Development Packages</h2>
-                        <p class="section-subtitle">Professional websites that convert visitors into customers</p>
+                        <h2 class="section-title">Complete Package Breakdown</h2>
+                        <p class="section-subtitle">Everything you need to establish your professional digital presence, all in one comprehensive package</p>
                     </div>
-                    <div class="row g-4">
-                        <!-- Starter Web -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="pricing-box-items">
-                                <div class="pricing-header">
-                                    <h3>Starter Web</h3>
-                                    <h2>₹14,999</h2>
-                                    <p>Beautiful & Budget-Friendly</p>
-                                </div>
-                                <ul class="pricing-list">
-                                    <li>Premium Design Templates</li>
-                                    <li>Mobile Responsive</li>
-                                    <li>30 Days Maintenance</li>
-                                    <li>Basic Management Support</li>
-                                </ul>
-                                <div class="pricing-button">
-                                    <a href="pricing.html" class="pricing-btn">Get Started</a>
-                                </div>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-value">₹5,000</div>
+                            <div class="service-header">
+                                <span class="service-icon">🎨</span>
+                                <h3 class="service-name">Professional Logo Design</h3>
                             </div>
+                            <p class="service-description">Custom-designed logo that represents your brand identity and values</p>
                         </div>
-
-                        <!-- Professional Web -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="pricing-box-items">
-                                <div class="pricing-header">
-                                    <h3>Professional Web</h3>
-                                    <h2>₹24,999</h2>
-                                    <p>Static Power with Extended Support</p>
-                                </div>
-                                <ul class="pricing-list">
-                                    <li>Custom Static Website</li>
-                                    <li>90 Days Maintenance</li>
-                                    <li>30 Days Management Window</li>
-                                    <li>Professional Design</li>
-                                </ul>
-                                <div class="pricing-button">
-                                    <a href="pricing.html" class="pricing-btn">Get Started</a>
-                                </div>
+                        <div class="service-card">
+                            <div class="service-value">₹12,000</div>
+                            <div class="service-header">
+                                <span class="service-icon">💻</span>
+                                <h3 class="service-name">Static Business Website</h3>
                             </div>
+                            <p class="service-description">Professional, mobile-responsive website showcasing your business</p>
                         </div>
-
-                        <!-- SEO Ready Web -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="pricing-box-items active">
-                                <div class="pricing-header">
-                                    <h3>SEO Ready Web</h3>
-                                    <h2>₹34,999</h2>
-                                    <p>Visibility That Converts</p>
-                                </div>
-                                <ul class="pricing-list">
-                                    <li>Static Website + Complete Initial SEO</li>
-                                    <li>180 Days Maintenance</li>
-                                    <li>30 Days Management</li>
-                                    <li>Google-Ready Optimization</li>
-                                </ul>
-                                <div class="pricing-button">
-                                    <a href="pricing.html" class="pricing-btn">Get Started</a>
-                                </div>
+                        <div class="service-card">
+                            <div class="service-value">₹3,000</div>
+                            <div class="service-header">
+                                <span class="service-icon">📱</span>
+                                <h3 class="service-name">Instagram Business Setup</h3>
                             </div>
+                            <p class="service-description">Professional Instagram business account with optimized profile, DP, and initial content strategy</p>
                         </div>
-
-                        <!-- Premium Complete Web -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="pricing-box-items">
-                                <div class="pricing-header">
-                                    <h3>Premium Complete Web</h3>
-                                    <h2>₹49,999</h2>
-                                    <p>The Full Digital Experience</p>
-                                </div>
-                                <ul class="pricing-list">
-                                    <li>Complete Website with Advanced Features</li>
-                                    <li>Professional SEO Implementation</li>
-                                    <li>1 Year Complete Maintenance</li>
-                                    <li>60 Days Management Support</li>
-                                </ul>
-                                <div class="pricing-button">
-                                    <a href="pricing.html" class="pricing-btn">Get Started</a>
-                                </div>
+                        <div class="service-card">
+                            <div class="service-value">₹3,000</div>
+                            <div class="service-header">
+                                <span class="service-icon">📘</span>
+                                <h3 class="service-name">Facebook Business Page</h3>
                             </div>
+                            <p class="service-description">Complete Facebook business page setup with professional branding and optimization</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-value">₹2,500</div>
+                            <div class="service-header">
+                                <span class="service-icon">🐦</span>
+                                <h3 class="service-name">X (Twitter) Business Account</h3>
+                            </div>
+                            <p class="service-description">Professional X account with custom banner, optimized profile, and brand alignment</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-value">₹3,500</div>
+                            <div class="service-header">
+                                <span class="service-icon">💼</span>
+                                <h3 class="service-name">LinkedIn Business Profile</h3>
+                            </div>
+                            <p class="service-description">Professional LinkedIn company page setup for B2B networking and credibility</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-value">₹4,000</div>
+                            <div class="service-header">
+                                <span class="service-icon">🎥</span>
+                                <h3 class="service-name">YouTube Channel Setup</h3>
+                            </div>
+                            <p class="service-description">Professional YouTube channel with custom banner, SEO-optimized description, and branding</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-value">₹15,000</div>
+                            <div class="service-header">
+                                <span class="service-icon">📈</span>
+                                <h3 class="service-name">30-Day Growth Strategy</h3>
+                            </div>
+                            <p class="service-description">Comprehensive digital marketing strategy and guidance for your first month</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-value">₹20,000</div>
+                            <div class="service-header">
+                                <span class="service-icon">🎬</span>
+                                <h3 class="service-name">10 Professional Short Videos</h3>
+                            </div>
+                            <p class="service-description">High-quality edited promotional videos for your business or services</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-value">₹2,500</div>
+                            <div class="service-header">
+                                <span class="service-icon">🎯</span>
+                                <h3 class="service-name">5 Business Posters</h3>
+                            </div>
+                            <p class="service-description">Professional graphic posters showcasing your business or services</p>
                         </div>
                     </div>
                 </div>
@@ -574,7 +682,7 @@
                             <div class="pricing-box-items">
                                 <div class="pricing-header">
                                     <h3>Beginner Pack</h3>
-                                    <h2>₹9,999 <sub>/month</sub></h2>
+                                    <h2>₹14,999 <sub>/month</sub></h2>
                                     <p>Clean & Professional</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -593,7 +701,7 @@
                             <div class="pricing-box-items active">
                                 <div class="pricing-header">
                                     <h3>Intermediate Pack</h3>
-                                    <h2>₹14,999 <sub>/month</sub></h2>
+                                    <h2>₹19,999 <sub>/month</sub></h2>
                                     <p>Enhanced Engagement</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -612,7 +720,7 @@
                             <div class="pricing-box-items">
                                 <div class="pricing-header">
                                     <h3>Pro Pack</h3>
-                                    <h2>₹29,999 <sub>/month</sub></h2>
+                                    <h2>₹39,999 <sub>/month</sub></h2>
                                     <p>Cinematic Excellence</p>
                                 </div>
                                 <ul class="pricing-list">
@@ -684,6 +792,94 @@
                                     <li>Professional blog posts</li>
                                     <li>SEO-optimized content</li>
                                     <li>Industry-specific writing</li>
+                                </ul>
+                                <div class="pricing-button">
+                                    <a href="pricing.html" class="pricing-btn">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mb-4">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Website Development Packages</h2>
+                        <p class="section-subtitle">Professional websites that convert visitors into customers</p>
+                    </div>
+                    <div class="row g-4">
+                        <!-- Starter Web -->
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="pricing-box-items">
+                                <div class="pricing-header">
+                                    <h3>Starter Web</h3>
+                                    <h2>₹14,999</h2>
+                                    <p>Beautiful & Budget-Friendly</p>
+                                </div>
+                                <ul class="pricing-list">
+                                    <li>Premium Design Templates</li>
+                                    <li>Mobile Responsive</li>
+                                    <li>30 Days Maintenance</li>
+                                    <li>Basic Management Support</li>
+                                </ul>
+                                <div class="pricing-button">
+                                    <a href="pricing.html" class="pricing-btn">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Professional Web -->
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="pricing-box-items">
+                                <div class="pricing-header">
+                                    <h3>Professional Web</h3>
+                                    <h2>₹29,999</h2>
+                                    <p>Static Power with Extended Support</p>
+                                </div>
+                                <ul class="pricing-list">
+                                    <li>Custom Static Website</li>
+                                    <li>90 Days Maintenance</li>
+                                    <li>30 Days Management Window</li>
+                                    <li>Professional Design</li>
+                                </ul>
+                                <div class="pricing-button">
+                                    <a href="pricing.html" class="pricing-btn">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SEO Ready Web -->
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="pricing-box-items active">
+                                <div class="pricing-header">
+                                    <h3>SEO Ready Web</h3>
+                                    <h2>₹39,999</h2>
+                                    <p>Visibility That Converts</p>
+                                </div>
+                                <ul class="pricing-list">
+                                    <li>Static Website + Complete Initial SEO</li>
+                                    <li>180 Days Maintenance</li>
+                                    <li>30 Days Management</li>
+                                    <li>Google-Ready Optimization</li>
+                                </ul>
+                                <div class="pricing-button">
+                                    <a href="pricing.html" class="pricing-btn">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Premium Complete Web -->
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="pricing-box-items">
+                                <div class="pricing-header">
+                                    <h3>Premium Complete Web</h3>
+                                    <h2>₹59,999</h2>
+                                    <p>The Full Digital Experience</p>
+                                </div>
+                                <ul class="pricing-list">
+                                    <li>Complete Website with Advanced Features</li>
+                                    <li>Professional SEO Implementation</li>
+                                    <li>1 Year Complete Maintenance</li>
+                                    <li>60 Days Management Support</li>
                                 </ul>
                                 <div class="pricing-button">
                                     <a href="pricing.html" class="pricing-btn">Get Started</a>
