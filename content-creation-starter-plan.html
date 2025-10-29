@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator Starter Plan - CONSUMEIT | Complete Creator Foundation Package</title>
+    <meta name="description" content="Transform from aspiring creator to content stardom with our comprehensive creator plan. Multi-platform setup, 25 professional videos, AI tools training, and strategic guidance for just ₹30,000">
+    <style>
+        /* Custom Design System for Content Creator Starter Plan */
+        :root {
+            /* Brand Colors */
+            --primary-navy: #1a365d;
+            --secondary-blue: #3182ce;
+            --accent-orange: #ff6b35;
+            --white: #ffffff;
+            --light-gray: #f7fafc;
+            --dark-gray: #2d3748;
+            --medium-gray: #718096;
+            --border-gray: #e2e8f0;
+            --success-green: #38a169;
+            --creator-purple: #9f7aea;
+            --creator-pink: #ed64a6;
+            
+            /* Typography */
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        /* Header Styles */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            text-decoration: none;
+        }
+        
+        .nav-button {
+            background: var(--secondary-blue);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-md);
+            border: none;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: var(--transition-normal);
+            cursor: pointer;
+        }
+        
+        .nav-button:hover {
+            background: var(--primary-navy);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 50%, var(--creator-purple) 100%);
+            color: var(--white);
+            padding: 8rem var(--space-md) var(--space-2xl);
+            text-align: center;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="creator" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23creator)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-sm);
+            line-height: 1.2;
+            background: linear-gradient(45deg, var(--white), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+            opacity: 0.9;
+        }
+        
+        .hero-price {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-orange);
+            margin: var(--space-lg) 0;
+        }
+        
+        .hero-price .small {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .cta-button {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-semibold);
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Creator Stats Section */
+        .creator-stats {
+            background: var(--white);
+            padding: var(--space-xl) var(--space-md);
+            margin-top: -2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stats-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-lg);
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: var(--space-md);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-orange);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--medium-gray);
+            font-weight: var(--font-weight-medium);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: var(--space-2xl) var(--space-md);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto var(--space-xl);
+        }
+        
+        /* What Is Section */
+        .what-is {
+            background: var(--light-gray);
+        }
+        
+        .what-is-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+        
+        .what-is-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .what-is-icon {
+            text-align: center;
+            font-size: 8rem;
+        }
+        
+        /* How It Transforms Section */
+        .how-transforms {
+            background: var(--white);
+        }
+        
+        .transforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .transform-card {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition-normal);
+            border: 2px solid transparent;
+        }
+        
+        .transform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--creator-purple);
+        }
+        
+        .transform-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--creator-purple), var(--creator-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+        
+        .transform-title {
+            font-size: 1.3rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-navy);
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Services Section */
+        .services {
+            background: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--border-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            transition: var(--transition-normal);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            border-color: var(--secondary-blue);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            margin-right: var(--space-md);
+        }
+        
+        .service-name {
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-navy);
+        }
+        
+        .service-value {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: var(--font-weight-medium);
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-sm);
+        }
+        
+        .service-description {
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+        
+        /* Why Perfect Section */
+        .why-perfect {
+            background: var(--white);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, var(--secondary-blue), var(--creator-purple));
+            color: var(--white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Timeline Section */
+        .timeline {
+            background: var(--primary-navy);
+            color: var(--white);
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .timeline-item {
+            text-align: center;
+            padding: var(--space-lg);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            transition: var(--transition-normal);
+        }
+        
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+        
+        .timeline-week {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-md);
+            display: inline-block;
+        }
+        
+        .timeline-tasks {
+            list-style: none;
+        }
+        
+        .timeline-tasks li {
+            margin-bottom: var(--space-xs);
+            opacity: 0.9;
+        }
+        
+        .timeline-tasks li:before {
+            content: "✓";
+            color: var(--accent-orange);
+            margin-right: var(--space-xs);
+            font-weight: var(--font-weight-bold);
+        }
+        
+        /* AI Tools Section */
+        .ai-tools {
+            background: var(--light-gray);
+        }
+        
+        .ai-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .ai-tool-card {
+            background: var(--white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--creator-purple);
+            transition: var(--transition-normal);
+        }
+        
+        .ai-tool-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--accent-orange);
+        }
+        
+        .ai-tool-name {
+            font-size: 1.1rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-navy);
+            margin-bottom: var(--space-xs);
+        }
+        
+        /* Value Section */
+        .value-section {
+            background: var(--white);
+        }
+        
+        .value-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .value-card {
+            background: var(--light-gray);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 3px solid var(--border-gray);
+            transition: var(--transition-normal);
+        }
+        
+        .value-card.highlighted {
+            border-color: var(--accent-orange);
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--space-md);
+        }
+        
+        .value-price {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-orange);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .savings-badge {
+            background: var(--success-green);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-weight: var(--font-weight-bold);
+            margin-top: var(--space-sm);
+            display: inline-block;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-blue), var(--creator-purple));
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-md);
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-xl);
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            font-weight: var(--font-weight-semibold);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button-secondary:hover {
+            background: var(--white);
+            color: var(--secondary-blue);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-navy);
+            margin-bottom: var(--space-md);
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            margin-right: var(--space-md);
+        }
+        
+        .contact-form {
+            background: var(--light-gray);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-weight: var(--font-weight-medium);
+            color: var(--primary-navy);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: var(--space-md);
+            border: 2px solid var(--border-gray);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: var(--transition-normal);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Counter Animation */
+        .counter {
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-orange);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-price {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .what-is-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .value-card.highlighted {
+                transform: none;
+            }
+            
+            .header-container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">CONSUMEIT</a>
+            <a href="#contact" class="nav-button">Start Creating</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Content Creator Starter Plan</h1>
+            <p class="hero-subtitle">Your First Step to Content Stardom - Complete Creator Foundation</p>
+            <div class="hero-price">
+                ₹30,000 <span class="small">Creator Package</span>
+            </div>
+            <a href="#contact" class="cta-button">Launch Your Creator Journey Today</a>
+        </div>
+    </section>
+
+    <!-- Creator Stats Section -->
+    <section class="creator-stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number counter" data-target="5">0</span>
+                <span class="stat-label">Platforms Setup</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number counter" data-target="25">0</span>
+                <span class="stat-label">Professional Videos</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number counter" data-target="90">0</span>
+                <span class="stat-label">Day Strategy Plan</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number counter" data-target="5">0</span>
+                <span class="stat-label">+ AI Tools Training</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Is This Plan Section -->
+    <section class="section what-is">
+        <div class="container">
+            <h2 class="section-title">What Is The Content Creator Starter Plan?</h2>
+            <div class="what-is-content">
+                <div class="what-is-text">
+                    <p>A comprehensive content creator foundation package designed specifically for aspiring creators ready to establish their professional presence across all major platforms and start their content creation journey with expert guidance.</p>
+                    <br>
+                    <p>This isn't just another service package – it's your complete creator transformation toolkit that takes you from aspiring creator to content stardom with professional multi-platform presence, high-quality content, and cutting-edge AI tools.</p>
+                    <br>
+                    <p>Perfect for aspiring influencers, content creators, personal brands, and anyone ready to build their audience and monetize their creativity across Instagram, Facebook, YouTube, X, and LinkedIn.</p>
+                </div>
+                <div class="what-is-icon float">
+                    🌟
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Transforms Section -->
+    <section class="section how-transforms">
+        <div class="container">
+            <h2 class="section-title">How It Transforms Your Creator Journey</h2>
+            <div class="transforms-grid">
+                <div class="transform-card">
+                    <div class="transform-icon">📱</div>
+                    <h3 class="transform-title">Multi-Platform Creator Presence</h3>
+                    <p>Establish your creator brand across all major platforms where your audience discovers content</p>
+                </div>
+                <div class="transform-card">
+                    <div class="transform-icon">🎬</div>
+                    <h3 class="transform-title">Professional Content Production</h3>
+                    <p>Get high-quality video content ready to engage and grow your audience from day one</p>
+                </div>
+                <div class="transform-card">
+                    <div class="transform-icon">🤖</div>
+                    <h3 class="transform-title">AI-Powered Content Strategy</h3>
+                    <p>Learn cutting-edge AI tools and strategies to create content faster and more effectively</p>
+                </div>
+                <div class="transform-card">
+                    <div class="transform-icon">👨‍🏫</div>
+                    <h3 class="transform-title">Expert Creator Guidance</h3>
+                    <p>Receive professional mentorship to avoid common creator mistakes and accelerate growth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Included Section -->
+    <section class="section services">
+        <div class="container">
+            <h2 class="section-title">Complete Creator Package Breakdown</h2>
+            <p class="section-subtitle">Everything you need to launch your creator career professionally, all in one comprehensive creator foundation package</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-value">₹4,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">📱</span>
+                        <h3 class="service-name">Instagram Creator Account Setup</h3>
+                    </div>
+                    <p class="service-description">Professional Instagram creator account with optimized profile, highlights, and growth strategy</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹3,500</div>
+                    <div class="service-header">
+                        <span class="service-icon">📘</span>
+                        <h3 class="service-name">Facebook Creator Page</h3>
+                    </div>
+                    <p class="service-description">Complete Facebook creator page setup with professional branding and audience targeting</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹5,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">🎥</span>
+                        <h3 class="service-name">YouTube Channel Optimization</h3>
+                    </div>
+                    <p class="service-description">Professional YouTube channel with custom banner, SEO description, and monetization prep</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹2,500</div>
+                    <div class="service-header">
+                        <span class="service-icon">🐦</span>
+                        <h3 class="service-name">X (Twitter) Creator Profile</h3>
+                    </div>
+                    <p class="service-description">Professional X creator account with optimized bio, banner, and engagement strategy</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹3,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">💼</span>
+                        <h3 class="service-name">LinkedIn Creator Profile</h3>
+                    </div>
+                    <p class="service-description">Professional LinkedIn creator profile for personal branding and professional networking</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹25,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">🎬</span>
+                        <h3 class="service-name">25 Professional Short Videos</h3>
+                    </div>
+                    <p class="service-description">High-quality edited short-form videos perfect for Reels, Shorts, and TikToks</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹8,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">🤖</span>
+                        <h3 class="service-name">AI Tools Training &amp; Guidance</h3>
+                    </div>
+                    <p class="service-description">Comprehensive training on AI tools for content creation, editing, and strategy</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹12,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">📈</span>
+                        <h3 class="service-name">Content Strategy Roadmap</h3>
+                    </div>
+                    <p class="service-description">Personalized 90-day content strategy with posting schedule and growth tactics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Perfect Section -->
+    <section class="section why-perfect">
+        <div class="container">
+            <h2 class="section-title">Why This Plan is Perfect for Creators</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3 class="benefit-title">Start with Professional Quality</h3>
+                    <p>Launch your creator journey with high-quality content that stands out from day one</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 class="benefit-title">Multi-Platform Dominance</h3>
+                    <p>Establish presence on all major platforms simultaneously for maximum reach</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 class="benefit-title">AI-Powered Advantage</h3>
+                    <p>Stay ahead of the competition with cutting-edge AI tools and techniques</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 class="benefit-title">Expert Creator Mentorship</h3>
+                    <p>Get guidance from successful creators who understand the journey</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 class="benefit-title">Ready-to-Publish Content</h3>
+                    <p>25 professional videos ready to post and engage your audience immediately</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 class="benefit-title">Strategic Growth Plan</h3>
+                    <p>90-day roadmap designed to accelerate your creator growth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section timeline">
+        <div class="container">
+            <h2 class="section-title">Creator Success Timeline</h2>
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 1</div>
+                    <ul class="timeline-tasks">
+                        <li>All social media accounts setup and optimization</li>
+                        <li>Brand identity and visual consistency across platforms</li>
+                        <li>Content strategy development and planning</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 2</div>
+                    <ul class="timeline-tasks">
+                        <li>Video content production begins</li>
+                        <li>AI tools training sessions start</li>
+                        <li>Platform-specific optimization</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 3</div>
+                    <ul class="timeline-tasks">
+                        <li>Video editing and post-production</li>
+                        <li>Advanced AI tools training</li>
+                        <li>Content calendar creation</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 4</div>
+                    <ul class="timeline-tasks">
+                        <li>Final video deliverables</li>
+                        <li>Strategy consultation and roadmap delivery</li>
+                        <li>Launch preparation and ongoing support setup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Tools Section -->
+    <section class="section ai-tools">
+        <div class="container">
+            <h2 class="section-title">AI Tools &amp; Training</h2>
+            <p class="section-subtitle">Master cutting-edge AI tools that give you a competitive advantage in content creation</p>
+            <div class="ai-tools-grid">
+                <div class="ai-tool-card">
+                    <h3 class="ai-tool-name">Content Generation AI</h3>
+                    <p>Learn to use AI for ideas, scripts, and captions</p>
+                </div>
+                <div class="ai-tool-card">
+                    <h3 class="ai-tool-name">Video Editing AI</h3>
+                    <p>AI-powered editing tools and techniques</p>
+                </div>
+                <div class="ai-tool-card">
+                    <h3 class="ai-tool-name">Thumbnail Creation AI</h3>
+                    <p>AI tools for eye-catching thumbnail design</p>
+                </div>
+                <div class="ai-tool-card">
+                    <h3 class="ai-tool-name">SEO Optimization AI</h3>
+                    <p>AI for hashtags, titles, and descriptions</p>
+                </div>
+                <div class="ai-tool-card">
+                    <h3 class="ai-tool-name">Analytics &amp; Growth AI</h3>
+                    <p>AI tools for performance tracking and optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Section -->
+    <section class="section value-section">
+        <div class="container">
+            <h2 class="section-title">Pricing &amp; Creator Value</h2>
+            <div class="value-comparison">
+                <div class="value-card">
+                    <h3 class="value-title">Individual Services Value</h3>
+                    <div class="value-price">₹63,000+</div>
+                    <p>If purchased separately from different vendors</p>
+                </div>
+                <div class="value-card highlighted">
+                    <h3 class="value-title">Creator Starter Plan</h3>
+                    <div class="value-price">₹30,000</div>
+                    <span class="savings-badge">Save ₹33,000+</span>
+                    <p>Complete creator package with professional coordination</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Become a Content Creator?</h2>
+                <p class="cta-text">Don't let another day pass without starting your creator journey. Your audience is waiting for your unique content and perspective.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button">Start Creating Now - ₹30,000</a>
+                    <a href="tel:+91" class="cta-button-secondary">Call Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Launch Your Creator Career Today</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact CONSUMEIT</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:consumeit.services@gmail.com">consumeit.services@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <strong>Website:</strong><br>
+                            <a href="http://www.consumeit.in" target="_blank">www.consumeit.in</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <strong>Tagline:</strong><br>
+                            Your Digital Growth Partner
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="niche">Content Niche/Focus</label>
+                        <input type="text" id="niche" name="niche" class="form-input" placeholder="e.g., Lifestyle, Tech, Fashion, Business">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Tell us about your creator goals</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" placeholder="What type of content do you want to create? What are your main goals as a creator?"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Start My Creator Journey!</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.dataset.target);
+                        const increment = target / 50;
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            counter.textContent = Math.floor(current);
+                        }, 40);
+                        
+                        counter.classList.add('counted');
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent('Content Creator Starter Plan Inquiry - ' + data.name);
+            const body = encodeURIComponent(
+                `Name: ${data.name}\n` +
+                `Email: ${data.email}\n` +
+                `Phone: ${data.phone || 'Not provided'}\n` +
+                `Content Niche: ${data.niche || 'Not specified'}\n\n` +
+                `Creator Goals:\n${data.message || 'Interested in the Content Creator Starter Plan'}\n\n` +
+                `Plan: Content Creator Starter Plan (₹30,000)\n` +
+                `Services: 5 Platform Setup + 25 Videos + AI Training + Strategy`
+            );
+            
+            const mailtoLink = `mailto:consumeit.services@gmail.com?subject=${subject}&body=${body}`;
+            window.open(mailtoLink);
+            
+            // Show success message
+            alert('Thank you for your inquiry! Your email client should open with a pre-filled message. Please send it to complete your request.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.transform-card, .service-card, .benefit-card, .timeline-item, .ai-tool-card, .value-card').forEach(el => {
+            scrollObserver.observe(el);
+        });
+
+        // Add pulse animation to CTA buttons
+        setInterval(() => {
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.classList.add('pulse');
+                setTimeout(() => button.classList.remove('pulse'), 1000);
+            });
+        }, 8000);
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const rate = scrolled * -0.5;
+                hero.style.backgroundPositionY = rate + 'px';
+            }
+        });
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateCounters();
+            
+            // Add staggered animation to service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Add floating animation to what-is icon
+            const floatIcon = document.querySelector('.float');
+            if (floatIcon) {
+                setInterval(() => {
+                    floatIcon.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        floatIcon.style.transform = 'translateY(0px)';
+                    }, 1500);
+                }, 3000);
+            }
+        });
+
+        // Add loading animation to form submission
+        document.getElementById('contactForm').addEventListener('submit', function() {
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            button.textContent = 'Sending...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 2000);
+        });
+
+        // Add hover sound effect simulation
+        document.querySelectorAll('.cta-button, .service-card, .benefit-card').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+    </script>
+</body>
+</html>

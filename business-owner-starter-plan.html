@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Owner Starter Plan - CONSUMEIT | Complete Digital Foundation Package</title>
+    <meta name="description" content="Transform your business from zero to digital hero with our comprehensive starter plan. Logo design, website, social media setup, videos, and 30-day strategy for just ₹60,000">
+    <style>
+        /* Custom Design System for Business Owner Starter Plan */
+        :root {
+            /* Brand Colors */
+            --primary-navy: #1a365d;
+            --secondary-blue: #3182ce;
+            --accent-orange: #ff6b35;
+            --white: #ffffff;
+            --light-gray: #f7fafc;
+            --dark-gray: #2d3748;
+            --medium-gray: #718096;
+            --border-gray: #e2e8f0;
+            --success-green: #38a169;
+            
+            /* Typography */
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        /* Header Styles */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            text-decoration: none;
+        }
+        
+        .nav-button {
+            background: var(--secondary-blue);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-md);
+            border: none;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: var(--transition-normal);
+            cursor: pointer;
+        }
+        
+        .nav-button:hover {
+            background: var(--primary-navy);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 8rem var(--space-md) var(--space-2xl);
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-sm);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+            opacity: 0.9;
+        }
+        
+        .hero-price {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-orange);
+            margin: var(--space-lg) 0;
+        }
+        
+        .hero-price .small {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .cta-button {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-semibold);
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: var(--space-2xl) var(--space-md);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto var(--space-xl);
+        }
+        
+        /* What Is Section */
+        .what-is {
+            background: var(--white);
+        }
+        
+        .what-is-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+        
+        .what-is-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .what-is-icon {
+            text-align: center;
+            font-size: 8rem;
+        }
+        
+        /* How It Helps Section */
+        .how-helps {
+            background: var(--light-gray);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+        
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-navy);
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .service-card {
+            background: var(--light-gray);
+            border: 2px solid var(--border-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            transition: var(--transition-normal);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            border-color: var(--secondary-blue);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            margin-right: var(--space-md);
+        }
+        
+        .service-name {
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-navy);
+        }
+        
+        .service-value {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: var(--font-weight-medium);
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-sm);
+        }
+        
+        .service-description {
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+        
+        /* Timeline Section */
+        .timeline {
+            background: var(--primary-navy);
+            color: var(--white);
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .timeline-item {
+            text-align: center;
+            padding: var(--space-lg);
+        }
+        
+        .timeline-week {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-md);
+            display: inline-block;
+        }
+        
+        .timeline-tasks {
+            list-style: none;
+        }
+        
+        .timeline-tasks li {
+            margin-bottom: var(--space-xs);
+            opacity: 0.9;
+        }
+        
+        .timeline-tasks li:before {
+            content: "✓";
+            color: var(--accent-orange);
+            margin-right: var(--space-xs);
+            font-weight: var(--font-weight-bold);
+        }
+        
+        /* Value Section */
+        .value-section {
+            background: var(--white);
+        }
+        
+        .value-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .value-card {
+            background: var(--light-gray);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 3px solid var(--border-gray);
+        }
+        
+        .value-card.highlighted {
+            border-color: var(--accent-orange);
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--space-md);
+        }
+        
+        .value-price {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-orange);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .savings-badge {
+            background: var(--success-green);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-weight: var(--font-weight-bold);
+            margin-top: var(--space-sm);
+            display: inline-block;
+        }
+        
+        /* Why Choose Section */
+        .why-choose {
+            background: var(--light-gray);
+        }
+        
+        .reasons-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .reason-item {
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .reason-check {
+            width: 30px;
+            height: 30px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: var(--font-weight-bold);
+            margin-right: var(--space-md);
+            flex-shrink: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--secondary-blue);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-md);
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-xl);
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            font-weight: var(--font-weight-semibold);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button-secondary:hover {
+            background: var(--white);
+            color: var(--secondary-blue);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-navy);
+            margin-bottom: var(--space-md);
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            margin-right: var(--space-md);
+        }
+        
+        .contact-form {
+            background: var(--light-gray);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-weight: var(--font-weight-medium);
+            color: var(--primary-navy);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: var(--space-md);
+            border: 2px solid var(--border-gray);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: var(--transition-normal);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Counter Animation */
+        .counter {
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-orange);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-price {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .what-is-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .value-card.highlighted {
+                transform: none;
+            }
+            
+            .header-container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* Loading Animation */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">CONSUMEIT</a>
+            <a href="#contact" class="nav-button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Business Owner Starter Plan</h1>
+            <p class="hero-subtitle">From Zero to Digital Hero - Complete Digital Foundation</p>
+            <div class="hero-price">
+                ₹60,000 <span class="small">/ $700</span>
+            </div>
+            <a href="#contact" class="cta-button">Start Your Digital Journey Today</a>
+        </div>
+    </section>
+
+    <!-- What Is This Plan Section -->
+    <section class="section what-is">
+        <div class="container">
+            <h2 class="section-title">What Is The Business Owner Starter Plan?</h2>
+            <div class="what-is-content">
+                <div class="what-is-text">
+                    <p>A comprehensive digital foundation package designed specifically for new businesses ready to establish their professional online presence and start their digital growth journey.</p>
+                    <br>
+                    <p>This isn't just another service package – it's your complete digital transformation toolkit that takes you from having zero online presence to becoming a professional, credible business that customers trust and choose.</p>
+                    <br>
+                    <p>Perfect for entrepreneurs, startups, and small businesses who want to launch professionally without the hassle of coordinating multiple vendors or learning complex digital marketing on their own.</p>
+                </div>
+                <div class="what-is-icon">
+                    🚀
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Helps Section -->
+    <section class="section how-helps">
+        <div class="container">
+            <h2 class="section-title">How It Helps Your Business Start &amp; Grow</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏢</div>
+                    <h3 class="benefit-title">Professional Brand Identity</h3>
+                    <p>Establish a credible and professional image that builds trust with your customers from day one</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3 class="benefit-title">Complete Online Presence</h3>
+                    <p>Get discovered across all major platforms where your customers are actively searching</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3 class="benefit-title">Strategic Foundation</h3>
+                    <p>Receive expert guidance and strategy to ensure you start on the right path to success</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Immediate Market Readiness</h3>
+                    <p>Launch your business with all digital assets ready, saving months of setup time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Included Section -->
+    <section class="section services">
+        <div class="container">
+            <h2 class="section-title">Complete Package Breakdown</h2>
+            <p class="section-subtitle">Everything you need to establish your professional digital presence, all in one comprehensive package</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-value">₹5,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">🎨</span>
+                        <h3 class="service-name">Professional Logo Design</h3>
+                    </div>
+                    <p class="service-description">Custom-designed logo that represents your brand identity and values</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹12,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">💻</span>
+                        <h3 class="service-name">Static Business Website</h3>
+                    </div>
+                    <p class="service-description">Professional, mobile-responsive website showcasing your business</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹3,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">📱</span>
+                        <h3 class="service-name">Instagram Business Setup</h3>
+                    </div>
+                    <p class="service-description">Professional Instagram business account with optimized profile, DP, and initial content strategy</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹3,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">📘</span>
+                        <h3 class="service-name">Facebook Business Page</h3>
+                    </div>
+                    <p class="service-description">Complete Facebook business page setup with professional branding and optimization</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹2,500</div>
+                    <div class="service-header">
+                        <span class="service-icon">🐦</span>
+                        <h3 class="service-name">X (Twitter) Business Account</h3>
+                    </div>
+                    <p class="service-description">Professional X account with custom banner, optimized profile, and brand alignment</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹3,500</div>
+                    <div class="service-header">
+                        <span class="service-icon">💼</span>
+                        <h3 class="service-name">LinkedIn Business Profile</h3>
+                    </div>
+                    <p class="service-description">Professional LinkedIn company page setup for B2B networking and credibility</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹4,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">🎥</span>
+                        <h3 class="service-name">YouTube Channel Setup</h3>
+                    </div>
+                    <p class="service-description">Professional YouTube channel with custom banner, SEO-optimized description, and branding</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹15,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">📈</span>
+                        <h3 class="service-name">30-Day Growth Strategy</h3>
+                    </div>
+                    <p class="service-description">Comprehensive digital marketing strategy and guidance for your first month</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹20,000</div>
+                    <div class="service-header">
+                        <span class="service-icon">🎬</span>
+                        <h3 class="service-name">10 Professional Short Videos</h3>
+                    </div>
+                    <p class="service-description">High-quality edited promotional videos for your business or services</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-value">₹2,500</div>
+                    <div class="service-header">
+                        <span class="service-icon">🎯</span>
+                        <h3 class="service-name">5 Business Posters</h3>
+                    </div>
+                    <p class="service-description">Professional graphic posters showcasing your business or services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section timeline">
+        <div class="container">
+            <h2 class="section-title">Your 30-Day Success Timeline</h2>
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 1</div>
+                    <ul class="timeline-tasks">
+                        <li>Logo design and brand identity creation</li>
+                        <li>Website development begins</li>
+                        <li>Social media accounts setup</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 2</div>
+                    <ul class="timeline-tasks">
+                        <li>Website completion and testing</li>
+                        <li>Social media profile optimization</li>
+                        <li>Content strategy development</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 3</div>
+                    <ul class="timeline-tasks">
+                        <li>Video production and editing</li>
+                        <li>Poster design and creation</li>
+                        <li>SEO optimization implementation</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 4</div>
+                    <ul class="timeline-tasks">
+                        <li>Final deliverables and launch</li>
+                        <li>Strategy consultation and training</li>
+                        <li>Ongoing support setup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Comparison Section -->
+    <section class="section value-section">
+        <div class="container">
+            <h2 class="section-title">Incredible Value &amp; Savings</h2>
+            <div class="value-comparison">
+                <div class="value-card">
+                    <h3 class="value-title">Individual Services Value</h3>
+                    <div class="value-price">₹70,500+</div>
+                    <p>If purchased separately from different vendors</p>
+                </div>
+                <div class="value-card highlighted">
+                    <h3 class="value-title">Starter Plan Price</h3>
+                    <div class="value-price">₹60,000</div>
+                    <span class="savings-badge">Save ₹10,500+</span>
+                    <p>Complete package with professional coordination</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose This Plan?</h2>
+            <div class="reasons-list">
+                <div class="reason-item">
+                    <div class="reason-check">✓</div>
+                    <span>Complete digital foundation in one package</span>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-check">✓</div>
+                    <span>Professional quality that builds trust</span>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-check">✓</div>
+                    <span>Expert strategy and guidance included</span>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-check">✓</div>
+                    <span>Immediate market readiness</span>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-check">✓</div>
+                    <span>Comprehensive multi-platform approach</span>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-check">✓</div>
+                    <span>Exceptional value for money</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Business?</h2>
+                <p class="cta-text">Don't let another day pass without a professional digital presence. Your competitors are already online – it's time to outshine them.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button">Get Started Now - ₹60,000</a>
+                    <a href="tel:+91" class="cta-button-secondary">Call Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get Your Business Online Today</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact CONSUMEIT</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:consumeit.services@gmail.com">consumeit.services@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <strong>Website:</strong><br>
+                            <a href="http://www.consumeit.in" target="_blank">www.consumeit.in</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <strong>Tagline:</strong><br>
+                            Your Digital Growth Partner
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="business">Business Name</label>
+                        <input type="text" id="business" name="business" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Tell us about your business goals</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" placeholder="What kind of business are you starting? What are your main goals?"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Inquiry - Let's Get Started!</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent('Business Owner Starter Plan Inquiry - ' + (data.business || data.name));
+            const body = encodeURIComponent(
+                `Name: ${data.name}\n` +
+                `Email: ${data.email}\n` +
+                `Phone: ${data.phone || 'Not provided'}\n` +
+                `Business: ${data.business || 'Not specified'}\n\n` +
+                `Message:\n${data.message || 'Interested in the Business Owner Starter Plan'}\n\n` +
+                `Plan: Business Owner Starter Plan (₹60,000 / $700)`
+            );
+            
+            const mailtoLink = `mailto:consumeit.services@gmail.com?subject=${subject}&body=${body}`;
+            window.open(mailtoLink);
+            
+            // Show success message
+            alert('Thank you for your inquiry! Your email client should open with a pre-filled message. Please send it to complete your request.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.benefit-card, .service-card, .timeline-item, .value-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter animation for price
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16); // 60fps
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString('en-IN');
+            }, 16);
+        }
+
+        // Add pulse animation to CTA buttons
+        setInterval(() => {
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.classList.add('pulse');
+                setTimeout(() => button.classList.remove('pulse'), 1000);
+            });
+        }, 5000);
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Add loading animation to form submission
+        document.getElementById('contactForm').addEventListener('submit', function() {
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            button.textContent = 'Sending...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
