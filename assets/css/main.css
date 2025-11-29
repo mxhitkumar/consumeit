@@ -247,6 +247,11 @@ h2 {
 }
 
 @media (max-width: 1199px) {
+
+  h1 {
+    font-size: 150px;
+  }
+
   h2 {
     font-size: 70px;
     line-height: 100%;
@@ -254,6 +259,10 @@ h2 {
 }
 
 @media (max-width: 767px) {
+  h1 {
+    font-size: 100px;
+  }
+
   h2 {
     font-size: 65px;
     line-height: 100%;
@@ -261,6 +270,10 @@ h2 {
 }
 
 @media (max-width: 575px) {
+  h1 {
+    font-size: 80px;
+  }
+
   h2 {
     font-size: 60px;
   }
@@ -272,6 +285,10 @@ h3 {
 }
 
 @media (max-width: 575px) {
+  h1 {
+    font-size: 60px;
+  }
+  
   h3 {
     font-size: 34px;
   }
@@ -1309,10 +1326,6 @@ span {
 }
 
 /*img-animation**********************/
-.img-custom-anim-left {
-  animation: img-anim-left 1.3s forwards cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
-  opacity: 0;
-}
 
 @keyframes img-anim-left {
   0% {
