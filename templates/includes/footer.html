@@ -1,0 +1,22 @@
+{% load static %}
+<footer class="footer-section dark-section-bg">
+    <div class="container custom-container">
+        <div class="footer-wrapper dark-text-style">
+            <div class="footer-wrapper-items">
+                <div class="footer-social-contact wow fadeInUp" data-wow-delay=".3s">
+                    <ul class="contact-list">
+                        <li><a href="mailto:{{ site_settings.contact_email|default:'consumeit.services@gmail.com' }}">{{ site_settings.contact_email|default:'consumeit.services@gmail.com' }}</a></li>
+                        {% if site_settings.contact_phone %}
+                        <li><a href="tel:{{ site_settings.contact_phone }}">{{ site_settings.contact_phone }}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <p class="wow fadeInUp" data-wow-delay=".7s">
+                    &copy; {% now "Y" %}<br>
+                    {{ site_settings.site_name|default:'ConsumeIT' }}<br>
+                    all rights reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

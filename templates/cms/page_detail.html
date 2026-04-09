@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "includes/breadcrumb.html" with title=page.hero_title|default:page.title %}
+<section class="about-section-2 fix section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-10">
+                {% if page.summary %}<p class="mb-4">{{ page.summary }}</p>{% endif %}
+                {{ page.body|safe }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

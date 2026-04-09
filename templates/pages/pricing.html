@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="breadcrumb-wrapper bg-cover" style="background-image: url('{% static 'assets/img/breadcrumb.jpg' %}');">
+    <div class="container">
+        <div class="page-heading">
+            <div class="breadcrumb-sub-title">
+                <h1 class="wow fadeInUp" data-wow-delay=".3s">Pricing</h1>
+            </div>
+            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                <li>
+                    <a href="{% url 'pages:home' %}">
+                        <i class="fa-regular fa-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li><i class="fa-solid fa-slash-forward"></i></li>
+                <li>Pricing</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="pricing-section section-padding">
+    <div class="container mb-4">
+        <div class="section-header text-center">
+            <h2 class="section-title">Starter Plans</h2>
+            <p class="section-subtitle">Perfect for businesses and creators just starting their digital journey</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="pricing-box-items">
+                    <div class="pricing-header">
+                        <h3>Business Owner Starter Plan</h3>
+                        <p>From Zero to Digital Hero</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Complete Professional Website Setup</li>
+                        <li>Social Media Account Creation & Optimization (All Major Platforms)</li>
+                        <li>30 Days Complete Management & Maintenance</li>
+                        <li>Digital Strategy Consultation</li>
+                        <li>Brand Guidelines & Asset Setup</li>
+                    </ul>
+                    <p class="best-for"><strong>Best for:</strong> New businesses ready to establish their digital footprint</p>
+                    <div class="pricing-button">
+                        <a href="/business-owner-starter-plan.html" class="pricing-btn">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="pricing-box-items active">
+                    <div class="pricing-header">
+                        <h3>Content Creator Starter Plan</h3>
+                        <p>Your First Step to Content Stardom</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Complete Social Media Setup (YouTube, Instagram, LinkedIn)</li>
+                        <li>30 Days Basic Content Services</li>
+                        <li>AI Tools Training & Guidance</li>
+                        <li>Content Strategy Roadmap</li>
+                        <li>Personal Brand Development</li>
+                    </ul>
+                    <p class="best-for"><strong>Best for:</strong> Aspiring creators who want professional guidance</p>
+                    <div class="pricing-button">
+                        <a href="/content-creation-starter-plan.html" class="pricing-btn">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-4">
+        <div class="section-header text-center">
+            <h2 class="section-title">Content Creator Bundle Packages</h2>
+            <p class="section-subtitle">Monthly packages designed to accelerate your content creation journey</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="pricing-box-items">
+                    <div class="pricing-header">
+                        <h3>Basic Plan</h3>
+                        <p>Steady Growth, Solid Foundation</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>5 Days Work Week</li>
+                        <li>Basic Video Editing (5 videos/week)</li>
+                        <li>Eye-Catching Thumbnails</li>
+                        <li>SEO-Optimized Descriptions, Tags & Titles</li>
+                        <li>Weekly Strategy Meeting</li>
+                    </ul>
+                    <p class="best-for"><strong>Best for:</strong> New creators establishing their presence</p>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Select Package</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="pricing-box-items active">
+                    <div class="pricing-header">
+                        <h3>Intermediate Plan</h3>
+                        <p>Accelerated Growth Mode</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>6 Days Work Week</li>
+                        <li>Professional Video Editing & Design</li>
+                        <li>Advanced SEO Descriptions & Tags</li>
+                        <li>Complete Upload Management</li>
+                        <li>Performance Tracking & Optimization</li>
+                    </ul>
+                    <p class="best-for"><strong>Best for:</strong> Growing creators ready to scale up</p>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Select Package</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="pricing-box-items">
+                    <div class="pricing-header">
+                        <h3>Advance Plan</h3>
+                        <p>The Headache-Free Success Package</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Heavy Editing & Cinematic Quality</li>
+                        <li>High-CTR Thumbnail Designs</li>
+                        <li>Complete SEO Optimization</li>
+                        <li>Dedicated Management Team</li>
+                        <li>Growth Analytics & Strategy</li>
+                    </ul>
+                    <p class="best-for"><strong>Best for:</strong> Serious creators who want to focus only on creating content</p>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Select Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-4">
+        <div class="section-header text-center">
+            <h2 class="section-title">Additional Services</h2>
+            <p class="section-subtitle">Comprehensive digital solutions to boost your online presence</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="pricing-box-items">
+                    <div class="pricing-header">
+                        <h3>Monthly SEO</h3>
+                        <p>Dominate Search Results</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Complete website SEO optimization</li>
+                        <li>Keyword research & implementation</li>
+                        <li>Monthly performance reports</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="pricing-box-items active">
+                    <div class="pricing-header">
+                        <h3>Website Maintenance</h3>
+                        <p>Worry-Free Website Management</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Regular updates & security</li>
+                        <li>Performance optimization</li>
+                        <li>Technical support</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="pricing-box-items">
+                    <div class="pricing-header">
+                        <h3>Blog Writing</h3>
+                        <p>Engaging Content That Converts</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Professional blog posts</li>
+                        <li>SEO-optimized content</li>
+                        <li>Industry-specific writing</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-4">
+        <div class="section-header text-center">
+            <h2 class="section-title">Website Development Packages</h2>
+            <p class="section-subtitle">Professional websites that convert visitors into customers</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="pricing-box-items">
+                    <div class="pricing-header">
+                        <h3>Starter Web</h3>
+                        <p>Beautiful & Budget-Friendly</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Premium Design Templates</li>
+                        <li>Mobile Responsive</li>
+                        <li>30 Days Maintenance</li>
+                        <li>Basic Management Support</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="pricing-box-items">
+                    <div class="pricing-header">
+                        <h3>Professional Web</h3>
+                        <p>Static Power with Extended Support</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Custom Static Website</li>
+                        <li>90 Days Maintenance</li>
+                        <li>30 Days Management Window</li>
+                        <li>Professional Design</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="pricing-box-items active">
+                    <div class="pricing-header">
+                        <h3>SEO Ready Web</h3>
+                        <p>Visibility That Converts</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Static Website + Complete Initial SEO</li>
+                        <li>180 Days Maintenance</li>
+                        <li>30 Days Management</li>
+                        <li>Google-Ready Optimization</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="pricing-box-items">
+                    <div class="pricing-header">
+                        <h3>Premium Complete Web</h3>
+                        <p>The Full Digital Experience</p>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>Complete Website with Advanced Features</li>
+                        <li>Professional SEO Implementation</li>
+                        <li>1 Year Complete Maintenance</li>
+                        <li>60 Days Management Support</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="{% url 'cms:page-detail' slug='contact' %}" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section fix section-padding pt-0 dark-bg-style black-bg">
+    <div class="container">
+        <div class="cta-wrapper bg-cover" style="background-image: url('{% static 'assets/img/cta/cta-bg.jpg' %}');">
+            <h2 class="wow fadeInUp" data-wow-delay=".3s">Have an idea in your mind?Let’s make something great together</h2>
+            <a href="{% url 'cms:page-detail' slug='contact' %}" class="theme-btn border-white wow fadeInUp" data-wow-delay=".5s">
+                <span class="icon-1">
+                    <img src="{% static 'assets/img/icon/10.svg' %}" alt="Arrow icon">
+                </span>
+                get in touch
+                <span class="icon-2">
+                    <img src="{% static 'assets/img/icon/11.svg' %}" alt="Arrow icon">
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

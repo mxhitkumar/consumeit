@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="breadcrumb-wrapper bg-cover" style="background-image: url('{% static 'assets/img/breadcrumb.jpg' %}');">
+    <div class="container">
+        <div class="page-heading">
+            <div class="breadcrumb-sub-title">
+                <h1 class="wow fadeInUp" data-wow-delay=".3s">about us</h1>
+            </div>
+            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                <li>
+                    <a href="{% url 'pages:home' %}">
+                        <i class="fa-regular fa-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li><i class="fa-solid fa-slash-forward"></i></li>
+                <li>About us</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="about-section-2 fix section-padding">
+    <div class="container">
+        <div class="about-wrapper-2 style-theme-color">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h6 class="wow fadeInUp">About ConsumeIT — Marketing & Web App Development Agency</h6>
+                        <p class="wow fadeInUp" data-wow-delay=".3s">
+                            ConsumeIT is a full-service digital agency specializing in web application development,
+                            performance marketing, and SEO for local and national businesses. We build high-converting
+                            websites and scalable web apps, run data-driven marketing campaigns, and optimise search
+                            visibility to help brands grow traction and revenue online.
+                        </p>
+                        <ul class="about-list wow fadeInUp" data-wow-delay=".5s">
+                            <li>
+                                <i class="fa-regular fa-arrow-up-right"></i>
+                                Scale your team quickly with expert web-app developers and marketers
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-arrow-up-right"></i>
+                                Improve yearly product sales and lead generation through CRO & PPC
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-arrow-up-right"></i>
+                                Grow real organic traffic with technical SEO and content strategy
+                            </li>
+                        </ul>
+                        <a href="{% url 'cms:page-detail' slug='about' %}" class="theme-btn wow fadeInUp" data-wow-delay=".3s">
+                            <span class="icon-1">
+                                <img src="{% static 'assets/img/icon/10.svg' %}" alt="Arrow icon">
+                            </span>
+                            know more
+                            <span class="icon-2">
+                                <img src="{% static 'assets/img/icon/11.svg' %}" alt="Arrow icon">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content-2">
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                            Comprehensive Web App Development, SEO & Digital Marketing for Measurable Growth
+                        </h2>
+                        <div class="counter-items">
+                            <div class="content wow fadeInUp" data-wow-delay=".2s">
+                                <h2><span class="count">+150</span> %</h2>
+                                <p>Clients have seen up to a 150%+ increase in conversion rates with our CRO-led web apps</p>
+                            </div>
+                            <div class="content wow fadeInUp" data-wow-delay=".3s">
+                                <h2>+ <span class="count">3</span> Lac</h2>
+                                <p>Managed ad spend & campaign budgets resulting in strong ROI for clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="choose-us-section section-padding bg-cover" style="background-image: url('{% static 'assets/img/choous-us-bg.jpg' %}');">
+    <div class="choose-us-image">
+        <img src="{% static 'assets/img/choose-us-img.jpg' %}" alt="Choose ConsumeIT Digital Agency" class="wow img-custom-anim-left">
+    </div>
+    <div class="container">
+        <div class="section-title theme-color-3 mb-0">
+            <h6 class="wow fadeInUp">Why Choose ConsumeIT</h6>
+            <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
+                Your trusted partner for <br> web development, SEO, <br> digital marketing & <br> AI automation.
+            </h2>
+            <p class="text-white max-600 mt-4 wow fadeInUp" data-wow-delay=".5s">
+                At ConsumeIT, we combine creativity, technology, and strategy to deliver digital solutions that drive
+                real business growth. From professional websites and Android apps to powerful SEO, social media
+                marketing, and AI automation, we help brands achieve long-term success online.
+            </p>
+        </div>
+        <div class="counter-wrapper-3">
+            <div class="row g-4">
+                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="counter-box-items">
+                        <h2><span class="count">100</span>+</h2>
+                        <p>Successful Projects Delivered</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="counter-box-items">
+                        <h2><span class="count">99</span>%</h2>
+                        <p>Client Satisfaction Rate</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="counter-box-items">
+                        <h2><span class="count">80</span>k</h2>
+                        <p>Hours Saved Through Automation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonial-section-4 fix section-padding pt-0" style="margin-top: 50px;">
+    <div class="container">
+        <div class="testimonial-wrapper-4">
+            <div class="row g-4 justify-content-end">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="testimonial-left">
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                            What our
+                            <span>clients are saying</span>
+                        </h2>
+                        <div class="array-button wow fadeInUp" data-wow-delay=".5s">
+                            <button class="array-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="array-next"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-6">
+                    <div class="swiper testimonial-slider-2">
+                        <div class="swiper-wrapper">
+                            {% for testimonial in testimonials %}
+                            <div class="swiper-slide">
+                                <div class="testimonial-content">
+                                    <div class="icon">
+                                        <img src="{% static 'assets/img/icon/13.svg' %}" alt="Quote icon">
+                                    </div>
+                                    <h4>“{{ testimonial.quote }}”</h4>
+                                    <p class="mt-3">{{ testimonial.name }}{% if testimonial.location %} · {{ testimonial.location }}{% endif %}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section fix section-padding pt-0 dark-bg-style black-bg">
+    <div class="container">
+        <div class="cta-wrapper bg-cover" style="background-image: url('{% static 'assets/img/cta/cta-bg.jpg' %}');">
+            <h2 class="wow fadeInUp" data-wow-delay=".3s">Have an idea in your mind?Let’s make something great together</h2>
+            <a href="{% url 'cms:page-detail' slug='contact' %}" class="theme-btn border-white wow fadeInUp" data-wow-delay=".5s">
+                <span class="icon-1">
+                    <img src="{% static 'assets/img/icon/10.svg' %}" alt="Arrow icon">
+                </span>
+                get in touch
+                <span class="icon-2">
+                    <img src="{% static 'assets/img/icon/11.svg' %}" alt="Arrow icon">
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

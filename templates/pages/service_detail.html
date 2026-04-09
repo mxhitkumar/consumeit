@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "includes/breadcrumb.html" with title=service.title %}
+<section class="service-details-section fix section-padding">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="service-details-content">
+                    <p class="mb-4">{{ service.short_description }}</p>
+                    {{ service.body|safe }}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="main-sidebar">
+                    <div class="single-sidebar-widget">
+                        <div class="wid-title"><h3>Need a tailored build?</h3></div>
+                        <p>Use Django admin to edit this service content, then link inquiries to your sales workflow.</p>
+                        <a href="/contact/" class="theme-btn mt-4">Book a consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

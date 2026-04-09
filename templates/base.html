@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ site_settings.site_name|default:'ConsumeIT' }}">
+    <meta name="description" content="{% block meta_description %}{{ meta_description|default:site_settings.default_meta_description }}{% endblock %}">
+    <meta name="robots" content="index, follow">
+    <title>{% block title %}{{ meta_title|default:site_settings.default_meta_title|default:'ConsumeIT' }}{% endblock %}</title>
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <meta property="og:title" content="{{ meta_title|default:site_settings.default_meta_title|default:'ConsumeIT' }}">
+    <meta property="og:description" content="{{ meta_description|default:site_settings.default_meta_description }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:site_name" content="{{ site_settings.site_name|default:'ConsumeIT' }}">
+    <meta property="og:type" content="website">
+    {% if object.og_image %}
+    <meta property="og:image" content="{{ object.og_image.url }}">
+    {% elif page.og_image %}
+    <meta property="og:image" content="{{ page.og_image.url }}">
+    {% elif post.og_image %}
+    <meta property="og:image" content="{{ post.og_image.url }}">
+    {% elif site_settings.default_og_image %}
+    <meta property="og:image" content="{{ site_settings.default_og_image.url }}">
+    {% else %}
+    <meta property="og:image" content="{% static 'assets/img/og-image.jpg' %}">
+    {% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ meta_title|default:site_settings.default_meta_title|default:'ConsumeIT' }}">
+    <meta name="twitter:description" content="{{ meta_description|default:site_settings.default_meta_description }}">
+    <link rel="icon" href="{% static 'assets/img/favicon/favicon-48.png' %}" type="image/png" sizes="48x48">
+    <link rel="icon" href="{% static 'assets/img/favicon/favicon-192.png' %}" type="image/png" sizes="192x192">
+    <link rel="icon" href="{% static 'assets/img/favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'assets/img/favicon/favicon.svg' %}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{% static 'assets/img/favicon/favicon-180.png' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tabler-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/color.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    {% if site_settings.google_analytics_measurement_id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site_settings.google_analytics_measurement_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site_settings.google_analytics_measurement_id }}');
+    </script>
+    {% endif %}
+</head>
+<body>
+    <button id="back-top" class="back-to-top">
+        <i class="fa-regular fa-arrow-up"></i>
+    </button>
+    {% include "includes/header.html" %}
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            {% block content %}{% endblock %}
+            {% include "includes/footer.html" %}
+        </div>
+    </div>
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/viewport.jquery.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/parallax.js' %}"></script>
+    <script src="{% static 'assets/js/gsap.js' %}"></script>
+    <script src="{% static 'assets/js/gsap-scroll-to-plugin.js' %}"></script>
+    <script src="{% static 'assets/js/gsap-scroll-smoother.js' %}"></script>
+    <script src="{% static 'assets/js/gsap-scroll-trigger.js' %}"></script>
+    <script src="{% static 'assets/js/gsap-split-text.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.waypoints.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/animation.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/customer-gsap-animation.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

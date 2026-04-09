@@ -1,0 +1,76 @@
+{% load static %}
+<div class="fix-area">
+    <div class="offcanvas__info">
+        <div class="offcanvas__wrapper">
+            <div class="offcanvas__content">
+                <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                    <div class="offcanvas__logo">
+                        <a href="{% url 'pages:home' %}">
+                            <img src="{% static 'assets/img/logo/black-logo.svg' %}" alt="{{ site_settings.site_name|default:'ConsumeIT' }} logo">
+                        </a>
+                    </div>
+                    <div class="offcanvas__close">
+                        <button><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <h3 class="offcanvas-title">{{ site_settings.site_tagline|default:'Dynamic digital growth systems' }}</h3>
+                <div class="mobile-menu fix mb-3"></div>
+                <div class="offcanvas__contact">
+                    <h3>Information</h3>
+                    <ul class="contact-list">
+                        <li><span>Address:</span> {{ site_settings.address|default:'Rohtak, Haryana, India' }}</li>
+                        <li><span>Email:</span> <a href="mailto:{{ site_settings.contact_email|default:'consumeit.services@gmail.com' }}">{{ site_settings.contact_email|default:'consumeit.services@gmail.com' }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="offcanvas__overlay"></div>
+<header id="header-sticky" class="header-1">
+    <div class="container-fluid">
+        <div class="mega-menu-wrapper">
+            <div class="header-main">
+                <div class="logo">
+                    <a href="{% url 'pages:home' %}" class="header-logo">
+                        <img src="{% static 'assets/img/logo/white-logo.svg' %}" alt="{{ site_settings.site_name|default:'ConsumeIT' }} logo">
+                    </a>
+                </div>
+                <div class="mean__menu-wrapper">
+                    <div class="main-menu">
+                        <nav id="mobile-menu">
+                            <ul>
+                                <li><a href="{% url 'pages:home' %}">Home</a></li>
+                                <li><a href="{% url 'pages:services' %}">Services</a></li>
+                                <li><a href="{% url 'pages:pricing' %}">Pricing</a></li>
+                                <li><a href="{% url 'pages:faq' %}">FAQ</a></li>
+                                <li><a href="{% url 'blog:list' %}">Blog</a></li>
+                                {% for nav_page in menu_pages %}
+                                <li><a href="{{ nav_page.get_absolute_url }}">{{ nav_page.navigation_label }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="header-right d-flex justify-content-end align-items-center">
+                    <div class="header-button">
+                        <a href="/contact/" class="theme-btn border-white">
+                            <span class="icon-1"><img src="{% static 'assets/img/icon/10.svg' %}" alt="Arrow icon"></span>
+                            get in touch
+                            <span class="icon-2"><img src="{% static 'assets/img/icon/11.svg' %}" alt="Arrow icon"></span>
+                        </a>
+                    </div>
+                    <div class="header__hamburger d-xl-none my-auto">
+                        <div class="sidebar__toggle">
+                            <div class="header-bar">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
