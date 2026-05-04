@@ -89,28 +89,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-# if os.environ.get('DATABASE_URL'):
-#     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "your-password",
-        "HOST": "db.xxxxx.supabase.co",
-        "PORT": "5432",
-        "OPTIONS": {
-            "sslmode": "require",
-        },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+if os.environ.get('DATABASE_URL'):
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age=int(os.environ.get('DB_CONN_MAX_AGE', '600')),
+        conn_health_checks=True,
+        ssl_require=os.environ.get('DB_SSL_REQUIRE', '0') == '1',
+    )
 
 AUTH_PASSWORD_VALIDATORS = [
     {
