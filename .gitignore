@@ -1,6 +1,51 @@
-.venv/
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+.python-version
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Django
 db.sqlite3
+db.sqlite3-journal
 media/
 staticfiles/
+local_settings.py
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Tests, coverage, and tooling caches
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs and local runtime files
+*.log
+*.pid
+*.seed
+
+# Editors and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -19,6 +19,36 @@ python3 -m venv .venv
 .venv/bin/python manage.py runserver
 ```
 
+## Deploy
+
+```bash
+./scripts/deploy.sh
+```
+
+Recommended production variables:
+
+```bash
+DJANGO_SECRET_KEY='use-a-long-random-secret'
+DJANGO_DEBUG=0
+DJANGO_ALLOWED_HOSTS='example.com,www.example.com'
+DJANGO_CSRF_TRUSTED_ORIGINS='https://example.com,https://www.example.com'
+```
+
+For a first deploy with starter content:
+
+```bash
+RUN_SEED=1 ./scripts/deploy.sh
+```
+
+To create an admin user during deploy:
+
+```bash
+DJANGO_SUPERUSER_USERNAME=admin \
+DJANGO_SUPERUSER_EMAIL=admin@example.com \
+DJANGO_SUPERUSER_PASSWORD='change-this-password' \
+./scripts/deploy.sh
+```
+
 ## Static-to-Django mapping
 
 - Shared static HTML layout is now `templates/base.html` with `templates/includes/header.html` and `templates/includes/footer.html`
