@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_description %}The page you were looking for could not be found. Browse services, pricing, FAQs, or return to the homepage.{% endblock %}
+
+{% block content %}
+<div class="breadcrumb-wrapper bg-cover" style="background-image: url('{% static 'assets/img/breadcrumb.jpg' %}');">
+    <div class="container">
+        <div class="page-heading">
+            <div class="breadcrumb-sub-title">
+                <h1 class="wow fadeInUp" data-wow-delay=".3s">Error</h1>
+            </div>
+            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                <li>
+                    <a href="{% url 'pages:home' %}">
+                        <i class="fa-regular fa-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-slash-forward"></i>
+                </li>
+                <li>404</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="error-section fix section-padding">
+    <div class="container">
+        <div class="error-content">
+            <h2 class="wow fadeInUp">404</h2>
+            <h3 class="wow fadeInUp" data-wow-delay=".3s">Sorry! Page not found.</h3>
+            <p class="wow fadeInUp" data-wow-delay=".5s">
+                The page you are looking for was moved, removed, renamed, or never existed.
+            </p>
+            <a href="{% url 'pages:home' %}" class="theme-btn wow fadeInUp" data-wow-delay=".7s">
+                <span class="icon-1">
+                    <img src="{% static 'assets/img/icon/10.svg' %}" alt="Arrow icon">
+                </span>
+                Go to home
+                <span class="icon-2">
+                    <img src="{% static 'assets/img/icon/11.svg' %}" alt="Arrow icon">
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section fix section-padding pt-0 dark-bg-style black-bg">
+    <div class="container">
+        <div class="cta-wrapper bg-cover" style="background-image: url('{% static 'assets/img/cta/cta-bg.jpg' %}');">
+            <h2 class="wow fadeInUp" data-wow-delay=".3s">Have an idea in your mind? Let's make something great together</h2>
+            <a href="/contact/" class="theme-btn border-white wow fadeInUp" data-wow-delay=".5s">
+                <span class="icon-1">
+                    <img src="{% static 'assets/img/icon/10.svg' %}" alt="Arrow icon">
+                </span>
+                get in touch
+                <span class="icon-2">
+                    <img src="{% static 'assets/img/icon/11.svg' %}" alt="Arrow icon">
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
