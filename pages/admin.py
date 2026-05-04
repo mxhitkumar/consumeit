@@ -15,9 +15,19 @@ class HomePageAdmin(admin.ModelAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ("title", "is_featured", "sort_order")
+    list_display = ("title", "starting_price", "timeline_text", "is_featured", "sort_order")
     list_filter = ("is_featured",)
-    search_fields = ("title", "short_description", "body")
+    search_fields = (
+        "title",
+        "hero_title",
+        "short_description",
+        "body",
+        "who_its_for",
+        "whats_included",
+        "expected_results",
+        "starting_price",
+        "cta_note",
+    )
     prepopulated_fields = {"slug": ("title",)}
 
 
