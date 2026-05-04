@@ -80,7 +80,10 @@ class FAQ(TimeStampedModel):
 
 class Testimonial(TimeStampedModel):
     name = models.CharField(max_length=120)
+    business_name = models.CharField(max_length=150, blank=True, default="")
+    role = models.CharField(max_length=120, blank=True, default="")
     location = models.CharField(max_length=120, blank=True)
+    result_metric = models.CharField(max_length=150, blank=True, default="")
     quote = models.TextField()
     avatar = models.ImageField(upload_to="testimonials/", blank=True, null=True)
     avatar_alt = models.CharField(max_length=255, blank=True)

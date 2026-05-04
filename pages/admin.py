@@ -30,9 +30,9 @@ class FAQAdmin(admin.ModelAdmin):
 
 @admin.register(Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):
-    list_display = ("name", "location", "sort_order", "is_active")
+    list_display = ("name", "business_name", "role", "location", "sort_order", "is_active")
     list_filter = ("is_active",)
-    search_fields = ("name", "location", "quote")
+    search_fields = ("name", "business_name", "role", "location", "quote", "result_metric")
 
 
 @admin.register(PricingPlan)
