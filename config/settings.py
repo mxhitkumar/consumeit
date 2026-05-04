@@ -6,6 +6,24 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+def load_dotenv(path):
+    if not path.exists():
+        return
+
+    for raw_line in path.read_text().splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip("'\"")
+        os.environ.setdefault(key, value)
+
+
+load_dotenv(BASE_DIR / ".env")
+
+
 def env_list(name, default=''):
     return [item.strip() for item in os.environ.get(name, default).split(',') if item.strip()]
 
@@ -71,14 +89,28 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# if os.environ.get('DATABASE_URL'):
+#     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "your-password",
+        "HOST": "db.xxxxx.supabase.co",
+        "PORT": "5432",
+        "OPTIONS": {
+            "sslmode": "require",
+        },
     }
 }
-if os.environ.get('DATABASE_URL'):
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
