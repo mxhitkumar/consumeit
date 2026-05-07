@@ -1,6 +1,6 @@
 from django.urls import path
 
-from cms.views import PageDetailView
+from apps.cms.views import PageDetailView
 
 app_name = "cms"
 

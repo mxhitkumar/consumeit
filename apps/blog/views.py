@@ -2,7 +2,7 @@ import re
 
 from django.views.generic import DetailView, ListView
 
-from blog.models import Category, Post, Tag
+from apps.blog.models import Category, Post, Tag
 
 
 class BlogListView(ListView):

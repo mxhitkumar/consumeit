@@ -20,8 +20,8 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
-from core.sitemaps import BlogPostSitemap, CmsPageSitemap, StaticViewSitemap
-from core.views import robots_txt
+from apps.core.sitemaps import BlogPostSitemap, CmsPageSitemap, StaticViewSitemap
+from apps.core.views import robots_txt
 
 sitemaps = {
     "static": StaticViewSitemap,
@@ -32,14 +32,14 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('blog/', include('blog.urls')),
-    path('', include('pages.urls')),
+    path('blog/', include('apps.blog.urls')),
+    path('', include('apps.pages.urls')),
     path('sitemap.xml',sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', robots_txt, name='robots-txt'),
-    path('', include('cms.urls')),
+    path('', include('apps.cms.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = "core.views.custom_404"
+handler404 = "apps.core.views.custom_404"

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from cms.models import Page
+from apps.cms.models import Page
 
 
 @admin.register(Page)

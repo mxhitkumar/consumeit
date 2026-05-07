@@ -3,7 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 
-from core.models import TimeStampedModel
+from apps.core.models import TimeStampedModel
 
 
 class Page(TimeStampedModel):

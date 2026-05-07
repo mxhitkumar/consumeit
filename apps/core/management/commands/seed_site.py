@@ -3,10 +3,10 @@ from datetime import timedelta
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 
-from blog.models import Category, Post, Tag
-from cms.models import Page
-from core.models import SiteSettings
-from pages.models import FAQ, HomePage, PricingPlan, Service, Testimonial
+from apps.blog.models import Category, Post, Tag
+from apps.cms.models import Page
+from apps.core.models import SiteSettings
+from apps.pages.models import FAQ, HomePage, PricingPlan, Service, Testimonial
 
 
 class Command(BaseCommand):

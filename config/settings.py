@@ -52,10 +52,10 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'ckeditor',
     'ckeditor_uploader',
-    'core',
-    'pages',
-    'blog',
-    'cms',
+    'apps.core',
+    'apps.pages',
+    'apps.blog',
+    'apps.cms',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'core.context_processors.global_site_context',
+                'apps.core.context_processors.global_site_context',
             ],
         },
     },

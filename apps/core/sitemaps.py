@@ -1,8 +1,8 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 
-from blog.models import Post
-from cms.models import Page
+from apps.blog.models import Post
+from apps.cms.models import Page
 
 
 class StaticViewSitemap(Sitemap):

@@ -1,8 +1,8 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
 
-from cms.models import Page
-from pages.models import Testimonial
+from apps.cms.models import Page
+from apps.pages.models import Testimonial
 
 
 class PageDetailView(DetailView):

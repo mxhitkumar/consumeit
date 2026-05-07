@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from blog.models import Category, Post, Tag
+from apps.blog.models import Category, Post, Tag
 
 
 @admin.register(Category)

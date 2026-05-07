@@ -1,7 +1,7 @@
 from django.views.generic import DetailView, TemplateView
 
-from blog.models import Post
-from pages.models import FAQ, HomePage, PricingPlan, Service, Testimonial
+from apps.blog.models import Post
+from apps.pages.models import FAQ, HomePage, PricingPlan, Service, Testimonial
 
 
 class HomeView(TemplateView):

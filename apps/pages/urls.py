@@ -1,6 +1,6 @@
 from django.urls import path
 
-from pages.views import FAQView, HomeView, PricingView, ServiceDetailView, ServiceListView
+from apps.pages.views import FAQView, HomeView, PricingView, ServiceDetailView, ServiceListView
 
 app_name = "pages"
 

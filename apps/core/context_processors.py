@@ -1,5 +1,5 @@
-from cms.models import Page
-from core.models import SiteSettings
+from apps.cms.models import Page
+from apps.core.models import SiteSettings
 
 
 def global_site_context(request):

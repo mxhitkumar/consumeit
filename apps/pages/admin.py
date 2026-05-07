@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from pages.models import FAQ, HomePage, PricingPlan, Service, Testimonial
+from apps.pages.models import FAQ, HomePage, PricingPlan, Service, Testimonial
 
 
 @admin.register(HomePage)
