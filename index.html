@@ -36,10 +36,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/campaign-promo.css">
 
     <script src="/assets/js/config.js"></script>
     <script src="/assets/js/analytics.js" defer></script>
     <script src="/assets/js/site.js" defer></script>
+    <script src="/assets/js/content-creation.js" defer></script>
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -298,6 +300,31 @@
                 <p class="card__num">Branding · Graphics · Video editing</p>
                 <p class="card__foot"><span class="arrow-link">Explore <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h10"/><path d="m8.5 3.5 4.5 4.5-4.5 4.5"/></svg></span></p>
             </article></div>
+    </div>
+</section>
+
+
+<!-- ======================= ₹999 campaign banner ======================= -->
+<section class="section section--tight" aria-labelledby="cbanner-title">
+    <div class="wrap">
+        <div class="cbanner reveal">
+            <div>
+                <p class="cbanner__eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 12h20M2 8h5M2 16h5M17 8h5M17 16h5"/></svg> Creator starter session</p>
+                <h2 id="cbanner-title">Want to start creating content?</h2>
+                <p>
+                    You don’t need equipment, an audience or a perfect niche to begin — you
+                    need a direction. One focused 1-on-1 session to work out what you post,
+                    where you post it, and how to keep going.
+                </p>
+            </div>
+            <div class="cbanner__aside">
+                <span class="cbanner__price"><span class="cur">₹</span><span data-campaign-price>999</span></span>
+                <a class="btn btn--primary btn--lg" href="/content-creation.html"
+                   data-track="content_campaign_cta_click" data-track-location="home-banner">
+                    Start your journey <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h10"/><path d="m8.5 3.5 4.5 4.5-4.5 4.5"/></svg>
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -593,6 +620,51 @@
 </section>
 
 </main>
+
+<!-- ===================== ₹999 campaign popup (homepage) ===================== -->
+<div class="cpop" id="campaign-popup" data-open="false" aria-hidden="true"
+     role="dialog" aria-modal="true" aria-labelledby="cpop-title" aria-describedby="cpop-sub">
+    <div class="cpop__card" tabindex="-1">
+        <button class="cpop__close" type="button" data-popup="close"
+                aria-label="Close this offer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+
+        <p class="cpop__eyebrow">Creator starter session</p>
+        <h2 id="cpop-title">Ready to start creating?</h2>
+        <p class="cpop__sub" id="cpop-sub">
+            Turn your ideas into a real content strategy — with someone who works through
+            it with you, rather than another video telling you what worked for them.
+        </p>
+
+        <div class="cpop__price">
+            <span class="label">1-on-1 Content Creation Session</span>
+            <span class="amt"><span class="cur">₹</span><span data-campaign-price>999</span></span>
+        </div>
+
+        <ul class="cpop__list"><li>Find your content direction</li><li>Choose the right platform</li><li>Get content ideas you can act on</li><li>Build your starting strategy</li><li>Ask your questions directly</li></ul>
+
+        <div class="cpop__actions">
+            <a class="btn btn--primary btn--lg btn--block" href="/content-creation.html"
+               data-popup="cta">Start My Content Journey</a>
+            <button class="cpop__later" type="button" data-popup="later">
+                Not ready yet? Maybe later
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================== ₹999 sticky CTA (small screens only) ================== -->
+<a class="csticky" id="campaign-sticky" href="/content-creation.html"
+   data-track="content_campaign_cta_click" data-track-location="home-sticky">
+    <span class="csticky__txt">
+        <b>Start creating</b>
+        <span>1-on-1 content guidance</span>
+    </span>
+    <span class="btn btn--primary">
+        <span class="csticky__price">₹<span data-campaign-price>999</span></span>
+    </span>
+</a>
+
 <footer class="site-footer">
     <div class="wrap">
         <div class="footer-grid">
@@ -613,7 +685,7 @@
             </div>
             <nav aria-labelledby="f-svc">
                 <h2 id="f-svc">Services</h2>
-                <ul><li><a href="/services/web-development.html">Web &amp; app development</a></li><li><a href="/services/seo.html">SEO</a></li><li><a href="/services/digital-marketing.html">Digital marketing</a></li><li><a href="/services/ai-automation.html">AI &amp; automation</a></li><li><a href="/services/branding-design.html">Brand, design &amp; video</a></li></ul>
+                <ul><li><a href="/services/web-development.html">Web &amp; app development</a></li><li><a href="/services/seo.html">SEO</a></li><li><a href="/services/digital-marketing.html">Digital marketing</a></li><li><a href="/services/ai-automation.html">AI &amp; automation</a></li><li><a href="/services/branding-design.html">Brand, design &amp; video</a></li><li><a href="/content-creation.html">1-on-1 creator session — ₹999</a></li></ul>
             </nav>
             <nav aria-labelledby="f-co">
                 <h2 id="f-co">Company</h2>

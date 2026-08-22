@@ -1,0 +1,257 @@
+/* ==========================================================================
+   ConsumeIT — ₹999 campaign promotion (homepage)
+   Popup modal + inline banner + sticky mobile CTA.
+   Deliberately disjoint from content-creation.css: the landing page never
+   needs these, and the homepage never needs the landing page's components.
+   Load after site.css.
+   ========================================================================== */
+
+:root {
+  --creator:      #A78BFA;
+  --creator-soft: rgba(167, 139, 250, 0.13);
+  --creator-line: rgba(167, 139, 250, 0.34);
+  --sticky-h:     60px;
+}
+
+/* --------------------------------------------------------------------------
+   1. Popup modal
+   -------------------------------------------------------------------------- */
+.cpop {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: rgba(3, 4, 6, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s var(--ease), visibility 0s linear 0.28s;
+}
+.cpop[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.28s var(--ease), visibility 0s linear 0s;
+}
+
+.cpop__card {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid var(--creator-line);
+  border-radius: var(--r-lg);
+  background:
+    radial-gradient(80% 60% at 50% 0%, var(--creator-soft), transparent 60%),
+    var(--ink-800);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.95);
+  transform: translateY(14px) scale(0.985);
+  transition: transform 0.32s var(--ease);
+}
+.cpop[data-open="true"] .cpop__card { transform: none; }
+
+.cpop__card:focus { outline: none; }
+
+.cpop__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--ink-900);
+  color: var(--fg-mute);
+  cursor: pointer;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.cpop__close:hover { color: var(--fg); border-color: var(--line-strong); }
+.cpop__close svg { width: 15px; height: 15px; }
+
+.cpop__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--creator);
+}
+.cpop__eyebrow::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--creator);
+}
+
+.cpop h2 {
+  margin-top: 0.9rem;
+  font-size: clamp(1.5rem, 4.5vw, 1.9rem);
+  letter-spacing: -0.028em;
+  line-height: 1.12;
+  padding-right: 2.5rem;
+}
+.cpop__sub { margin-top: 0.7rem; font-size: 0.9375rem; color: var(--fg-soft); }
+
+.cpop__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.1rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--creator-line);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.02);
+}
+.cpop__price .label { font-size: 0.8125rem; color: var(--fg-mute); }
+.cpop__price .amt {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.08em;
+  font-size: clamp(2.1rem, 7vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+.cpop__price .cur { font-size: 0.52em; font-weight: 600; color: var(--creator); }
+
+.cpop__list { list-style: none; display: grid; gap: 0.55rem; margin-top: 1.25rem; }
+.cpop__list li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+  font-size: 0.9375rem;
+  color: var(--fg-soft);
+}
+.cpop__list li::before {
+  content: "";
+  width: 18px; height: 18px;
+  margin-top: 0.15em;
+  border-radius: 50%;
+  background: var(--creator-soft)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A78BFA' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+    center / 11px no-repeat;
+}
+
+.cpop__actions { display: grid; gap: 0.75rem; margin-top: 1.5rem; justify-items: center; }
+.cpop__later {
+  border: 0;
+  background: none;
+  color: var(--fg-mute);
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--r-sm);
+}
+.cpop__later:hover { color: var(--fg-soft); text-decoration: underline; text-underline-offset: 0.15em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cpop, .cpop__card { transition: none; }
+  .cpop__card { transform: none; }
+}
+
+/* --------------------------------------------------------------------------
+   2. Inline homepage banner
+   -------------------------------------------------------------------------- */
+.cbanner {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--creator-line);
+  border-radius: var(--r-lg);
+  background:
+    radial-gradient(65% 120% at 0% 50%, var(--creator-soft), transparent 62%),
+    var(--ink-800);
+}
+@media (min-width: 860px) {
+  .cbanner { grid-template-columns: minmax(0, 1fr) auto; gap: 2.5rem; }
+}
+.cbanner__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--creator);
+}
+.cbanner__eyebrow svg { width: 14px; height: 14px; }
+.cbanner h2 {
+  margin-top: 0.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -0.025em;
+  max-width: 24ch;
+}
+.cbanner p { margin-top: 0.6rem; font-size: 0.9375rem; color: var(--fg-mute); max-width: 52ch; }
+.cbanner__price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.08em;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--fg);
+}
+.cbanner__price .cur { font-size: 0.55em; font-weight: 600; color: var(--creator); }
+.cbanner__aside { display: grid; gap: 0.75rem; justify-items: start; }
+@media (min-width: 860px) { .cbanner__aside { justify-items: end; text-align: right; } }
+.cbanner__aside .cbanner__price { font-size: clamp(2.2rem, 5vw, 2.9rem); }
+
+/* --------------------------------------------------------------------------
+   3. Sticky mobile CTA
+   Sits as a bottom bar; the existing WhatsApp dock is lifted above it and the
+   page gets matching bottom padding so nothing is ever covered.
+   -------------------------------------------------------------------------- */
+.csticky {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 95;
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem clamp(0.9rem, 4vw, 1.25rem);
+  padding-bottom: max(0.6rem, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--creator-line);
+  background: rgba(13, 15, 20, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateY(110%);
+  transition: transform 0.3s var(--ease);
+}
+.csticky.is-in { transform: none; }
+.csticky__txt { display: grid; gap: 0.05rem; min-width: 0; }
+.csticky__txt b { font-size: 0.875rem; font-weight: 600; letter-spacing: -0.01em; }
+.csticky__txt span {
+  font-size: 0.75rem;
+  color: var(--fg-mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.csticky .btn { margin-left: auto; flex: none; padding: 0.6rem 1rem; font-size: 0.875rem; }
+.csticky__price { color: var(--creator); font-weight: 700; }
+
+@media (max-width: 700px) {
+  .csticky { display: flex; }
+  body.has-sticky-cta { padding-bottom: var(--sticky-h); }
+  /* keep the WhatsApp/contact dock clear of the bar */
+  body.has-sticky-cta .dock { bottom: calc(var(--sticky-h) + 0.75rem); }
+}
+@media (max-width: 360px) {
+  .csticky__txt span { display: none; }
+}
+
+/* Never stack the sticky bar on top of an open modal. */
+body.is-locked .csticky { transform: translateY(110%); }
