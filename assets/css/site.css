@@ -994,6 +994,50 @@ body.is-locked { overflow: hidden; }
 .channel b { display: block; font-size: 0.9375rem; font-weight: 600; }
 .channel span { font-size: 0.8125rem; color: var(--fg-mute); word-break: break-word; }
 
+/* Legal/policy pages ------------------------------------------------------- */
+.legal { max-width: 74ch; }
+.legal h2 {
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 100px;
+}
+.legal h3 { margin-top: 1.75rem; font-size: 1.0625rem; }
+.legal p, .legal li { color: var(--fg-soft); font-size: 0.9375rem; }
+.legal p { margin-top: 0.9rem; }
+.legal ul, .legal ol { margin-top: 0.9rem; padding-left: 1.25rem; display: grid; gap: 0.5rem; }
+.legal a { color: var(--signal); text-decoration: underline; text-underline-offset: 0.15em; }
+.legal dl { margin-top: 1rem; display: grid; gap: 0.9rem; }
+.legal dt { font-weight: 600; color: var(--fg); font-size: 0.9375rem; }
+.legal dd { margin: 0.2rem 0 0; color: var(--fg-soft); font-size: 0.9375rem; }
+
+/* Details ConsumeIT must confirm before publishing — deliberately obvious. */
+.placeholder {
+  display: block;
+  margin-top: 0.9rem;
+  padding: 0.85rem 1rem;
+  border: 1px dashed rgba(255, 196, 0, 0.45);
+  border-radius: var(--r-sm);
+  background: rgba(255, 196, 0, 0.05);
+  color: #ffd25e;
+  font-size: 0.875rem;
+}
+.placeholder b { color: #ffdf94; }
+
+.toc { display: grid; gap: 0.4rem; list-style: none; padding: 0; margin-top: 1.25rem; }
+.toc a { font-size: 0.9375rem; color: var(--fg-mute); text-decoration: none; }
+.toc a:hover { color: var(--signal); }
+
+.legal-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.875rem; }
+.legal-table th, .legal-table td {
+  text-align: left; padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.legal-table th { color: var(--fg); font-weight: 600; }
+.legal-table td { color: var(--fg-mute); }
+.table-scroll { overflow-x: auto; }
+
 /* --------------------------------------------------------------------------
    17. Breadcrumb
    -------------------------------------------------------------------------- */

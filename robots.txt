@@ -5,7 +5,7 @@ Allow: /
 
 # Leftover theme demo files — not part of the site, must never be indexed
 Disallow: /xxxxxxx/
-Disallow: /removedthings
+Disallow: /removedthings.html
 
 # Common non-content paths
 Disallow: /admin/

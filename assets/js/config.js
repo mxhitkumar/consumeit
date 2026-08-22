@@ -67,7 +67,7 @@ window.CONSUMEIT = {
     primary: c.whatsapp
       ? 'https://wa.me/' + c.whatsapp.replace(/\D/g, '') +
         '?text=' + encodeURIComponent(c.whatsappMessage)
-      : '/contact'
+      : '/contact.html'
   };
 
   C.hasWhatsApp = Boolean(c.whatsapp);

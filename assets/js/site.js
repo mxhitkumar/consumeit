@@ -213,7 +213,7 @@
       } else if (el.dataset.linkOptional !== undefined) {
         el.remove();
       } else {
-        el.setAttribute('href', '/contact');
+        el.setAttribute('href', '/contact.html');
       }
     });
 
@@ -239,7 +239,7 @@
     if (!el) return;
 
     if (!C.hasWhatsApp) {
-      el.setAttribute('href', '/contact');
+      el.setAttribute('href', '/contact.html');
       el.setAttribute('data-track', 'contact_click');
       el.setAttribute('data-track-location', 'dock');
       var label = $('span', el);
