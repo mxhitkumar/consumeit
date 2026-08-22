@@ -1,10 +1,15 @@
+# https://www.consumeit.in/robots.txt
+
 User-agent: *
 Allow: /
 
-# Block admin or backend pages (optional – only if you have them)
+# Leftover theme demo files — not part of the site, must never be indexed
+Disallow: /xxxxxxx/
+Disallow: /removedthings
+
+# Common non-content paths
 Disallow: /admin/
 Disallow: /backend/
 Disallow: /cgi-bin/
 
-# Sitemap location
 Sitemap: https://www.consumeit.in/sitemap.xml

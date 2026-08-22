@@ -1,1337 +1,421 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Creator Starter Plan - CONSUMEIT | Complete Creator Foundation Package</title>
-    <meta name="description"
-        content="Transform from aspiring creator to content stardom with our comprehensive creator plan. Multi-platform setup, 25 professional videos, AI tools training, and strategic guidance for just ₹30,000">
-    <style>
-        /* Custom Design System for Content Creator Starter Plan */
-        :root {
-            /* Brand Colors */
-            --primary-navy: #1a365d;
-            --secondary-blue: #3182ce;
-            --accent-orange: #ff6b35;
-            --white: #ffffff;
-            --light-gray: #f7fafc;
-            --dark-gray: #2d3748;
-            --medium-gray: #718096;
-            --border-gray: #e2e8f0;
-            --success-green: #38a169;
-            --creator-purple: #9f7aea;
-            --creator-pink: #ed64a6;
-
-            /* Typography */
-            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --font-weight-normal: 400;
-            --font-weight-medium: 500;
-            --font-weight-semibold: 600;
-            --font-weight-bold: 700;
-
-            /* Spacing */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2rem;
-            --space-xl: 3rem;
-            --space-2xl: 4rem;
-
-            /* Border Radius */
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-            --radius-xl: 16px;
-
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-
-            /* Transitions */
-            --transition-fast: 0.15s ease;
-            --transition-normal: 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-primary);
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--light-gray);
-        }
-
-        /* Header Styles */
-        .header {
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: var(--space-sm) 0;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--primary-navy);
-            text-decoration: none;
-        }
-
-        .nav-button {
-            background: var(--secondary-blue);
-            color: var(--white);
-            padding: var(--space-xs) var(--space-md);
-            border: none;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-weight: var(--font-weight-medium);
-            transition: var(--transition-normal);
-            cursor: pointer;
-        }
-
-        .nav-button:hover {
-            background: var(--primary-navy);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 50%, var(--creator-purple) 100%);
-            color: var(--white);
-            padding: 8rem var(--space-md) var(--space-2xl);
-            text-align: center;
-            margin-top: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="creator" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23creator)"/></svg>') repeat;
-            opacity: 0.3;
-        }
-
-        .hero-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: var(--font-weight-bold);
-            margin-bottom: var(--space-sm);
-            line-height: 1.2;
-            background: linear-gradient(45deg, var(--white), var(--accent-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: var(--space-md);
-            opacity: 0.9;
-        }
-
-        .hero-price {
-            font-size: 2.5rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--accent-orange);
-            margin: var(--space-lg) 0;
-        }
-
-        .hero-price .small {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        .cta-button {
-            background: var(--accent-orange);
-            color: var(--white);
-            padding: var(--space-md) var(--space-xl);
-            font-size: 1.2rem;
-            font-weight: var(--font-weight-semibold);
-            border: none;
-            border-radius: var(--radius-lg);
-            cursor: pointer;
-            transition: var(--transition-normal);
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: var(--shadow-md);
-        }
-
-        .cta-button:hover {
-            background: #e55a2b;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Creator Stats Section */
-        .creator-stats {
-            background: var(--white);
-            padding: var(--space-xl) var(--space-md);
-            margin-top: -2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stats-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--space-lg);
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: var(--space-md);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--accent-orange);
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--medium-gray);
-            font-weight: var(--font-weight-medium);
-        }
-
-        /* Section Styles */
-        .section {
-            padding: var(--space-2xl) var(--space-md);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--primary-navy);
-            margin-bottom: var(--space-xl);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--medium-gray);
-            max-width: 600px;
-            margin: 0 auto var(--space-xl);
-        }
-
-        /* What Is Section */
-        .what-is {
-            background: var(--light-gray);
-        }
-
-        .what-is-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-2xl);
-            align-items: center;
-        }
-
-        .what-is-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .what-is-icon {
-            text-align: center;
-            font-size: 8rem;
-        }
-
-        /* How It Transforms Section */
-        .how-transforms {
-            background: var(--white);
-        }
-
-        .transforms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-lg);
-        }
-
-        .transform-card {
-            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            transition: var(--transition-normal);
-            border: 2px solid transparent;
-        }
-
-        .transform-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--creator-purple);
-        }
-
-        .transform-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--creator-purple), var(--creator-pink));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-md);
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-
-        .transform-title {
-            font-size: 1.3rem;
-            font-weight: var(--font-weight-semibold);
-            color: var(--primary-navy);
-            margin-bottom: var(--space-sm);
-        }
-
-        /* Services Section */
-        .services {
-            background: var(--light-gray);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-lg);
-        }
-
-        .service-card {
-            background: var(--white);
-            border: 2px solid var(--border-gray);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            transition: var(--transition-normal);
-            position: relative;
-        }
-
-        .service-card:hover {
-            border-color: var(--secondary-blue);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .service-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--space-md);
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            margin-right: var(--space-md);
-        }
-
-        .service-name {
-            font-size: 1.2rem;
-            font-weight: var(--font-weight-semibold);
-            color: var(--primary-navy);
-        }
-
-        .service-value {
-            background: var(--accent-orange);
-            color: var(--white);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            font-weight: var(--font-weight-medium);
-            position: absolute;
-            top: var(--space-sm);
-            right: var(--space-sm);
-        }
-
-        .service-description {
-            color: var(--medium-gray);
-            line-height: 1.6;
-        }
-
-        /* Why Perfect Section */
-        .why-perfect {
-            background: var(--white);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-lg);
-        }
-
-        .benefit-card {
-            background: linear-gradient(135deg, var(--secondary-blue), var(--creator-purple));
-            color: var(--white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            transition: var(--transition-normal);
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .benefit-title {
-            font-size: 1.3rem;
-            font-weight: var(--font-weight-bold);
-            margin-bottom: var(--space-sm);
-        }
-
-        /* Timeline Section */
-        .timeline {
-            background: var(--primary-navy);
-            color: var(--white);
-        }
-
-        .timeline-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-lg);
-        }
-
-        .timeline-item {
-            text-align: center;
-            padding: var(--space-lg);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-lg);
-            transition: var(--transition-normal);
-        }
-
-        .timeline-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
-        }
-
-        .timeline-week {
-            background: var(--accent-orange);
-            color: var(--white);
-            padding: var(--space-sm) var(--space-md);
-            border-radius: var(--radius-md);
-            font-weight: var(--font-weight-bold);
-            margin-bottom: var(--space-md);
-            display: inline-block;
-        }
-
-        .timeline-tasks {
-            list-style: none;
-        }
-
-        .timeline-tasks li {
-            margin-bottom: var(--space-xs);
-            opacity: 0.9;
-        }
-
-        .timeline-tasks li:before {
-            content: "✓";
-            color: var(--accent-orange);
-            margin-right: var(--space-xs);
-            font-weight: var(--font-weight-bold);
-        }
-
-        /* AI Tools Section */
-        .ai-tools {
-            background: var(--light-gray);
-        }
-
-        .ai-tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-lg);
-        }
-
-        .ai-tool-card {
-            background: var(--white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--creator-purple);
-            transition: var(--transition-normal);
-        }
-
-        .ai-tool-card:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-md);
-            border-left-color: var(--accent-orange);
-        }
-
-        .ai-tool-name {
-            font-size: 1.1rem;
-            font-weight: var(--font-weight-semibold);
-            color: var(--primary-navy);
-            margin-bottom: var(--space-xs);
-        }
-
-        /* Value Section */
-        .value-section {
-            background: var(--white);
-        }
-
-        .value-comparison {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-lg);
-            margin-bottom: var(--space-xl);
-        }
-
-        .value-card {
-            background: var(--light-gray);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            border: 3px solid var(--border-gray);
-            transition: var(--transition-normal);
-        }
-
-        .value-card.highlighted {
-            border-color: var(--accent-orange);
-            background: var(--white);
-            box-shadow: var(--shadow-lg);
-            transform: scale(1.05);
-        }
-
-        .value-title {
-            font-size: 1.5rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--primary-navy);
-            margin-bottom: var(--space-md);
-        }
-
-        .value-price {
-            font-size: 2.5rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--accent-orange);
-            margin-bottom: var(--space-sm);
-        }
-
-        .savings-badge {
-            background: var(--success-green);
-            color: var(--white);
-            padding: var(--space-xs) var(--space-md);
-            border-radius: var(--radius-full);
-            font-weight: var(--font-weight-bold);
-            margin-top: var(--space-sm);
-            display: inline-block;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--secondary-blue), var(--creator-purple));
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: var(--font-weight-bold);
-            margin-bottom: var(--space-md);
-        }
-
-        .cta-text {
-            font-size: 1.2rem;
-            margin-bottom: var(--space-xl);
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: var(--space-md);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-            padding: var(--space-md) var(--space-xl);
-            font-size: 1.1rem;
-            font-weight: var(--font-weight-semibold);
-            border-radius: var(--radius-lg);
-            cursor: pointer;
-            transition: var(--transition-normal);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button-secondary:hover {
-            background: var(--white);
-            color: var(--secondary-blue);
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--white);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-2xl);
-        }
-
-        .contact-info h3 {
-            color: var(--primary-navy);
-            margin-bottom: var(--space-md);
-            font-size: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--space-md);
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            margin-right: var(--space-md);
-        }
-
-        .contact-form {
-            background: var(--light-gray);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-        }
-
-        .form-group {
-            margin-bottom: var(--space-md);
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: var(--space-xs);
-            font-weight: var(--font-weight-medium);
-            color: var(--primary-navy);
-        }
-
-        .form-input {
-            width: 100%;
-            padding: var(--space-md);
-            border: 2px solid var(--border-gray);
-            border-radius: var(--radius-md);
-            font-size: 1rem;
-            transition: var(--transition-normal);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--secondary-blue);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Counter Animation */
-        .counter {
-            font-size: 2rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--accent-orange);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-price {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .what-is-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .value-card.highlighted {
-                transform: none;
-            }
-
-            .header-container {
-                padding: 0 var(--space-sm);
-            }
-
-            .logo {
-                font-size: 1.5rem;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.7;
-            }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .float {
-            animation: float 3s ease-in-out infinite;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content Creator Starter Plan — Creator Setup | ConsumeIT</title>
+    <meta name="description" content="A launch package for new creators: professional setup on Instagram, YouTube, X and LinkedIn, 25 edited videos, AI training and a 90-day content plan.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ConsumeIT">
+    <link rel="canonical" href="https://www.consumeit.in/content-creation-starter-plan">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ConsumeIT">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:title" content="Content Creator Starter Plan — Creator Setup | ConsumeIT">
+    <meta property="og:description" content="A launch package for new creators: professional setup on Instagram, YouTube, X and LinkedIn, 25 edited videos, AI training and a 90-day content plan.">
+    <meta property="og:url" content="https://www.consumeit.in/content-creation-starter-plan">
+    <meta property="og:image" content="https://www.consumeit.in/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ConsumeIT — build, grow and automate your business online">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@consumeitx">
+    <meta name="twitter:title" content="Content Creator Starter Plan — Creator Setup | ConsumeIT">
+    <meta name="twitter:description" content="A launch package for new creators: professional setup on Instagram, YouTube, X and LinkedIn, 25 edited videos, AI training and a 90-day content plan.">
+    <meta name="twitter:image" content="https://www.consumeit.in/assets/img/og-image.jpg">
+
+    <link rel="icon" href="/assets/img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/img/favicon/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/favicon-180.png">
+    <meta name="theme-color" content="#08090C">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <script src="/assets/js/config.js"></script>
+    <script src="/assets/js/analytics.js" defer></script>
+    <script src="/assets/js/site.js" defer></script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://www.consumeit.in/#organization",
+  "name": "ConsumeIT",
+  "url": "https://www.consumeit.in/",
+  "logo": "https://www.consumeit.in/assets/img/logo/black-logo.svg",
+  "image": "https://www.consumeit.in/assets/img/og-image.jpg",
+  "email": "consumeit.services@gmail.com",
+  "description": "ConsumeIT is a digital technology and growth agency. We build websites, web apps and Android apps, grow brands with SEO and performance marketing, and automate business workflows with AI.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rohtak",
+    "addressRegion": "Haryana",
+    "addressCountry": "IN"
+  },
+  "areaServed": [
+    {"@type": "Country", "name": "India"},
+    {"@type": "AdministrativeArea", "name": "Haryana"}
+  ],
+  "knowsAbout": [
+    "Web development", "Web application development", "E-commerce development",
+    "Android app development", "Search engine optimisation", "Local SEO",
+    "Performance marketing", "Google Ads", "Meta Ads", "Social media marketing",
+    "AI automation", "Business process automation", "Branding", "Video editing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "ConsumeIT services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web and app development", "url": "https://www.consumeit.in/services/web-development"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Search engine optimisation", "url": "https://www.consumeit.in/services/seo"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Digital and performance marketing", "url": "https://www.consumeit.in/services/digital-marketing"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI and automation", "url": "https://www.consumeit.in/services/ai-automation"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand, design and video", "url": "https://www.consumeit.in/services/branding-design"}}
+    ]
+  }
+}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.consumeit.in/"},{"@type":"ListItem","position":2,"name":"Pricing","item":"https://www.consumeit.in/pricing"},{"@type":"ListItem","position":3,"name":"Content Creator Starter Plan","item":"https://www.consumeit.in/content-creation-starter-plan"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does the Content Creator Starter Plan cost?", "acceptedAnswer": {"@type": "Answer", "text": "It is quoted individually, because footage volume and editing depth vary. Send a short brief about your niche and format and you will get a written quote within one business day."}}, {"@type": "Question", "name": "Do I need to provide the footage for the 25 videos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the package covers editing, not filming. We will tell you exactly what to shoot and how, which is usually the part new creators get wrong."}}, {"@type": "Question", "name": "What if I only publish on one or two platforms?", "acceptedAnswer": {"@type": "Answer", "text": "Then we concentrate the setup there instead of spreading it across five. Tell us where your audience is and we will adjust the scope and the quote."}}, {"@type": "Question", "name": "Which AI tools do you train on?", "acceptedAnswer": {"@type": "Answer", "text": "The ones that fit your format — scripting, editing assistance, thumbnails, captions and planning. We prioritise tools you can keep using affordably rather than whatever is trending this month."}}, {"@type": "Question", "name": "What happens after the plan finishes?", "acceptedAnswer": {"@type": "Answer", "text": "You have the profiles, the content buffer, the tools and the roadmap. Creators who want ongoing production usually move to a video editing package."}}]}</script>
 </head>
-
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <a href="#" class="logo">CONSUMEIT</a>
-            <a href="#contact" class="nav-button">Start Creating</a>
-        </div>
-    </header>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+    <div class="wrap">
+        <nav class="nav" aria-label="Primary">
+            <a class="brand" href="/" aria-label="ConsumeIT — home">
+                <img src="/assets/img/logo/white-logo.svg" alt="ConsumeIT" width="169" height="45" fetchpriority="high">
+            </a>
+            <ul class="nav__links"><li><a href="/service">Services</a></li><li><a href="/pricing" aria-current="page">Pricing</a></li><li><a href="/about">About</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
+            <div class="nav__actions">
+                <a class="btn btn--ghost" data-link="whatsapp" data-link-optional href="/contact"
+                   data-track="whatsapp_click" data-track-location="header">Chat on WhatsApp</a>
+                <a class="btn btn--primary" href="/contact"
+                   data-track="contact_click" data-track-location="header">Start a project</a>
+                <button class="nav-toggle" type="button" data-drawer="open"
+                        aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <h1>Content Creator Starter Plan</h1>
-            <p class="hero-subtitle">Your First Step to Content Stardom - Complete Creator Foundation</p>
-            <!-- <div class="hero-price">
-                ₹30,000 <span class="small">Creator Package</span>
-            </div> -->
-            <a href="contact.html" class="cta-button">Launch Your Creator Journey Today</a>
-        </div>
-    </section>
+<div class="drawer" id="drawer" data-open="false">
+    <div class="wrap drawer__top">
+        <a class="brand" href="/" aria-label="ConsumeIT — home">
+            <img src="/assets/img/logo/white-logo.svg" alt="ConsumeIT" width="169" height="45">
+        </a>
+        <button class="nav-toggle" type="button" data-drawer="close"
+                aria-expanded="true" aria-label="Close menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div class="wrap">
+        <ul class="drawer__nav"><li><a href="/">Home</a></li><li><a href="/service">Services</a></li><li><a href="/pricing" aria-current="page">Pricing</a></li><li><a href="/about">About</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
+    </div>
+    <div class="wrap drawer__foot">
+        <a class="btn btn--primary btn--lg btn--block" href="/contact"
+           data-track="contact_click" data-track-location="drawer">Start a project</a>
+        <a class="btn btn--ghost btn--block" data-link="whatsapp" data-link-optional href="/contact"
+           data-track="whatsapp_click" data-track-location="drawer">Chat on WhatsApp</a>
+        <p class="small"><a href="mailto:consumeit.services@gmail.com">consumeit.services@gmail.com</a><br>Rohtak, Haryana, India</p>
+    </div>
+</div>
+<main id="main">
 
-    <!-- Creator Stats Section -->
-    <section class="creator-stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number counter" data-target="5">56+</span>
-                <span class="stat-label">Platforms Setup</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number counter" data-target="25">2800+</span>
-                <span class="stat-label">Professional Videos</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number counter" data-target="90">230+</span>
-                <span class="stat-label">Day Strategy Plan</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number counter" data-target="5">800+</span>
-                <span class="stat-label">AI Tools Training</span>
-            </div>
+<section class="page-head">
+    <div class="wrap">
+        <ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/pricing">Pricing</a></li><li aria-current="page">Content Creator Starter Plan</li></ol>
+        <p class="eyebrow mt-2">Starter plan · Creators</p>
+        <h1>Launch as a creator who already looks established</h1>
+        <p class="lede">Professional profiles on every platform that matters, a stock of edited videos ready to publish, training on the AI tools that make production sustainable, and a 90-day plan so you know what to post next.</p>
+        <div class="btn-row mt-3">
+            <a class="btn btn--primary btn--lg" href="/contact"
+               data-track="pricing_cta_click" data-track-label="content-creation-starter-plan-hero">Get started</a>
+            <a class="btn btn--ghost btn--lg" data-link="whatsapp" data-link-optional href="/contact"
+               data-track="whatsapp_click" data-track-location="content-creation-starter-plan">Ask a question</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- What Is This Plan Section -->
-    <section class="section what-is">
-        <div class="container">
-            <h2 class="section-title">What Is The Content Creator Starter Plan?</h2>
-            <div class="what-is-content">
-                <div class="what-is-text">
-                    <p>A comprehensive content creator foundation package designed specifically for aspiring creators
-                        ready to establish their professional presence across all major platforms and start their
-                        content creation journey with expert guidance.</p>
-                    <br>
-                    <p>This isn't just another service package – it's your complete creator transformation toolkit that
-                        takes you from aspiring creator to content stardom with professional multi-platform presence,
-                        high-quality content, and cutting-edge AI tools.</p>
-                    <br>
-                    <p>Perfect for aspiring influencers, content creators, personal brands, and anyone ready to build
-                        their audience and monetize their creativity across Instagram, Facebook, YouTube, X, and
-                        LinkedIn.</p>
-                </div>
-                <div class="what-is-icon float">
-                    🌟
-                </div>
+<section class="section section--tight">
+    <div class="wrap">
+        <div class="grid grid-4"><div class="metric reveal">
+                <p class="metric__val"><span data-count="5">0</span><span class="unit"></span></p>
+                <p class="metric__label">Platforms set up and optimised</p>
+            </div><div class="metric reveal">
+                <p class="metric__val"><span data-count="25">0</span><span class="unit"></span></p>
+                <p class="metric__label">Edited short videos</p>
+            </div><div class="metric reveal">
+                <p class="metric__val"><span data-count="90">0</span><span class="unit">-day</span></p>
+                <p class="metric__label">Content strategy roadmap</p>
+            </div><div class="metric reveal">
+                <p class="metric__val"><span data-count="1">0</span><span class="unit">:1</span></p>
+                <p class="metric__label">AI tools training</p>
+            </div></div>
+    </div>
+</section>
+
+<section class="section section--tight">
+    <div class="wrap">
+        <div class="grid grid-2" style="gap:clamp(2rem,5vw,3.5rem);align-items:start">
+            <div class="flow reveal">
+                <h2>What the Content Creator Starter Plan is</h2>
+                
+                <p class="muted">A foundation package for creators who are serious about publishing
+                but have not yet built the setup that makes it sustainable.</p>
+                <p class="muted">Most new creators fail on logistics rather than talent. The
+                profiles are half-finished, editing takes six hours per video, and by week three
+                the schedule has quietly collapsed. This package removes those three obstacles
+                before they happen.</p>
+                <p class="muted">You start with a professional presence everywhere, a bank of
+                finished videos, the tools to produce faster, and a roadmap that tells you what to
+                publish for the next three months.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- How It Transforms Section -->
-    <section class="section how-transforms">
-        <div class="container">
-            <h2 class="section-title">How It Transforms Your Creator Journey</h2>
-            <div class="transforms-grid">
-                <div class="transform-card">
-                    <div class="transform-icon">📱</div>
-                    <h3 class="transform-title">Multi-Platform Creator Presence</h3>
-                    <p>Establish your creator brand across all major platforms where your audience discovers content</p>
-                </div>
-                <div class="transform-card">
-                    <div class="transform-icon">🎬</div>
-                    <h3 class="transform-title">Professional Content Production</h3>
-                    <p>Get high-quality video content ready to engage and grow your audience from day one</p>
-                </div>
-                <div class="transform-card">
-                    <div class="transform-icon">🤖</div>
-                    <h3 class="transform-title">AI-Powered Content Strategy</h3>
-                    <p>Learn cutting-edge AI tools and strategies to create content faster and more effectively</p>
-                </div>
-                <div class="transform-card">
-                    <div class="transform-icon">👨‍🏫</div>
-                    <h3 class="transform-title">Expert Creator Guidance</h3>
-                    <p>Receive professional mentorship to avoid common creator mistakes and accelerate growth</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Included Section -->
-    <section class="section services">
-        <div class="container">
-            <h2 class="section-title">Complete Creator Package Breakdown</h2>
-            <p class="section-subtitle">Everything you need to launch your creator career professionally, all in one
-                comprehensive creator foundation package</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <!-- <div class="service-value">₹4,000</div> -->
-                    <div class="service-header">
-                        <span class="service-icon">📱</span>
-                        <h3 class="service-name">Instagram Creator Account Setup</h3>
-                    </div>
-                    <p class="service-description">Professional Instagram creator account with optimized profile,
-                        highlights, and growth strategy</p>
-                </div>
-                <div class="service-card">
-                    <!-- <div class="service-value">₹3,500</div> -->
-                    <div class="service-header">
-                        <span class="service-icon">📘</span>
-                        <h3 class="service-name">Facebook Creator Page</h3>
-                    </div>
-                    <p class="service-description">Complete Facebook creator page setup with professional branding and
-                        audience targeting</p>
-                </div>
-                <div class="service-card">
-                    <!-- <div class="service-value">₹5,000</div> -->
-                    <div class="service-header">
-                        <span class="service-icon">🎥</span>
-                        <h3 class="service-name">YouTube Channel Optimization</h3>
-                    </div>
-                    <p class="service-description">Professional YouTube channel with custom banner, SEO description, and
-                        monetization prep</p>
-                </div>
-                <div class="service-card">
-                    <!-- <div class="service-value">₹2,500</div> -->
-                    <div class="service-header">
-                        <span class="service-icon">🐦</span>
-                        <h3 class="service-name">X (Twitter) Creator Profile</h3>
-                    </div>
-                    <p class="service-description">Professional X creator account with optimized bio, banner, and
-                        engagement strategy</p>
-                </div>
-                <div class="service-card">
-                    <!-- <div class="service-value">₹3,000</div> -->
-                    <div class="service-header">
-                        <span class="service-icon">💼</span>
-                        <h3 class="service-name">LinkedIn Creator Profile</h3>
-                    </div>
-                    <p class="service-description">Professional LinkedIn creator profile for personal branding and
-                        professional networking</p>
-                </div>
-                <div class="service-card">
-                    <!-- <div class="service-value">₹25,000</div> -->
-                    <div class="service-header">
-                        <span class="service-icon">🎬</span>
-                        <h3 class="service-name">25 Professional Short Videos</h3>
-                    </div>
-                    <p class="service-description">High-quality edited short-form videos perfect for Reels, Shorts, and
-                        TikToks</p>
-                </div>
-                <div class="service-card">
-                    <!-- <div class="service-value">₹8,000</div> -->
-                    <div class="service-header">
-                        <span class="service-icon">🤖</span>
-                        <h3 class="service-name">AI Tools Training &amp; Guidance</h3>
-                    </div>
-                    <p class="service-description">Comprehensive training on AI tools for content creation, editing, and
-                        strategy</p>
-                </div>
-                <div class="service-card">
-                    <!-- <div class="service-value">₹12,000</div> -->
-                    <div class="service-header">
-                        <span class="service-icon">📈</span>
-                        <h3 class="service-name">Content Strategy Roadmap</h3>
-                    </div>
-                    <p class="service-description">Personalized 90-day content strategy with posting schedule and growth
-                        tactics</p>
-                </div>
+            <div class="card reveal" data-delay="1">
+                <p class="eyebrow">Who it’s for</p>
+                <h2 class="h3 mt-2">Built for creators at the start</h2>
+                <ul class="checks mt-2"><li>Aspiring creators and influencers publishing their first content</li><li>Professionals building a personal brand alongside their work</li><li>Creators who have started but never set profiles up properly</li><li>Anyone whose publishing schedule keeps collapsing under editing time</li><li>Creators who want to use AI tools but do not know where to begin</li></ul>
+                <p class="card__foot">
+                    <a class="arrow-link" href="/contact"
+                       data-track="pricing_cta_click" data-track-label="content-creation-starter-plan-who">Check if it fits <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h10"/><path d="m8.5 3.5 4.5 4.5-4.5 4.5"/></svg></a>
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Why Perfect Section -->
-    <section class="section why-perfect">
-        <div class="container">
-            <h2 class="section-title">Why This Plan is Perfect for Creators</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3 class="benefit-title">Start with Professional Quality</h3>
-                    <p>Launch your creator journey with high-quality content that stands out from day one</p>
-                </div>
-                <div class="benefit-card">
-                    <h3 class="benefit-title">Multi-Platform Dominance</h3>
-                    <p>Establish presence on all major platforms simultaneously for maximum reach</p>
-                </div>
-                <div class="benefit-card">
-                    <h3 class="benefit-title">AI-Powered Advantage</h3>
-                    <p>Stay ahead of the competition with cutting-edge AI tools and techniques</p>
-                </div>
-                <div class="benefit-card">
-                    <h3 class="benefit-title">Expert Creator Mentorship</h3>
-                    <p>Get guidance from successful creators who understand the journey</p>
-                </div>
-                <div class="benefit-card">
-                    <h3 class="benefit-title">Ready-to-Publish Content</h3>
-                    <p>25 professional videos ready to post and engage your audience immediately</p>
-                </div>
-                <div class="benefit-card">
-                    <h3 class="benefit-title">Strategic Growth Plan</h3>
-                    <p>90-day roadmap designed to accelerate your creator growth</p>
-                </div>
+<section class="section section--alt section--line">
+    <div class="wrap">
+        <div class="section-head section-head--split">
+            <div>
+                <p class="eyebrow reveal">Included</p>
+                <h2 class="mt-2 reveal">Complete package breakdown</h2>
+            </div>
+            <p class="lede reveal">Presence, content and process — the three things that decide whether a creator is still publishing in month three.</p>
+        </div>
+        <div class="grid grid-3"><article class="card reveal" data-delay="0">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 5.2a3.4 3.4 0 0 1 0 6.6"/><path d="M18 14.4a6.5 6.5 0 0 1 3.5 5.6"/></svg></div>
+                <h3>Instagram creator account setup</h3><p class="muted small">Creator account with optimised profile, highlights structure and a growth approach to post against.</p>
+            </article><article class="card reveal" data-delay="1">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 5.2a3.4 3.4 0 0 1 0 6.6"/><path d="M18 14.4a6.5 6.5 0 0 1 3.5 5.6"/></svg></div>
+                <h3>Facebook creator page</h3><p class="muted small">Complete page setup with professional branding and audience targeting configured.</p>
+            </article><article class="card reveal" data-delay="2">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 12h20M2 8h5M2 16h5M17 8h5M17 16h5"/></svg></div>
+                <h3>YouTube channel optimisation</h3><p class="muted small">Custom banner, SEO-written description, consistent branding and monetisation prerequisites prepared.</p>
+            </article><article class="card reveal" data-delay="0">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 5.2a3.4 3.4 0 0 1 0 6.6"/><path d="M18 14.4a6.5 6.5 0 0 1 3.5 5.6"/></svg></div>
+                <h3>X (Twitter) creator profile</h3><p class="muted small">Optimised bio and banner with an engagement approach suited to the platform.</p>
+            </article><article class="card reveal" data-delay="1">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 5.2a3.4 3.4 0 0 1 0 6.6"/><path d="M18 14.4a6.5 6.5 0 0 1 3.5 5.6"/></svg></div>
+                <h3>LinkedIn creator profile</h3><p class="muted small">Set up for personal branding and professional reach, which most creators overlook.</p>
+            </article><article class="card reveal" data-delay="2">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 12h20M2 8h5M2 16h5M17 8h5M17 16h5"/></svg></div>
+                <h3>25 professional short videos</h3><p class="muted small">Edited short-form videos ready for Reels, Shorts and vertical feeds — a real publishing buffer, not a sample.</p>
+            </article><article class="card reveal" data-delay="0">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4M4.9 19.1l2.9-2.9M16.2 7.8l2.9-2.9"/></svg></div>
+                <h3>AI tools training &amp; guidance</h3><p class="muted small">Hands-on training on AI tools for scripting, editing and strategy, so production stops being the bottleneck.</p>
+            </article><article class="card reveal" data-delay="1">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+                <h3>90-day content strategy roadmap</h3><p class="muted small">A personalised content plan with posting schedule and growth tactics for your first three months.</p>
+            </article></div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <div class="section-head section-head--split">
+            <div>
+                <p class="eyebrow reveal">Timeline</p>
+                <h2 class="mt-2 reveal">How the launch runs</h2>
+            </div>
+            <p class="lede reveal">Four weeks from nothing to a creator setup you can sustain.</p>
+        </div>
+        <div class="steps"><div class="step reveal">
+                <p class="step__no">Week 1</p>
+                <h3>Positioning and profiles</h3>
+                <ul class="checks"><li>Niche, audience and positioning agreed</li><li>Accounts created across all five platforms</li><li>Content strategy direction set</li></ul>
+            </div><div class="step reveal">
+                <p class="step__no">Week 2</p>
+                <h3>Branding and optimisation</h3>
+                <ul class="checks"><li>Profile branding, banners and bios</li><li>Platform-specific optimisation</li><li>90-day roadmap drafted</li></ul>
+            </div><div class="step reveal">
+                <p class="step__no">Week 3</p>
+                <h3>Content production</h3>
+                <ul class="checks"><li>Short-form video editing</li><li>Thumbnail and cover design</li><li>Publishing schedule built</li></ul>
+            </div><div class="step reveal">
+                <p class="step__no">Week 4</p>
+                <h3>Training and launch</h3>
+                <ul class="checks"><li>AI tools training session</li><li>Roadmap walkthrough and handover</li><li>First publishing week supported</li></ul>
+            </div></div>
+    </div>
+</section>
+
+<section class="section section--alt section--line">
+    <div class="wrap">
+        <div class="section-head">
+            <p class="eyebrow reveal">Why this plan</p>
+            <h2 class="mt-2 reveal">Why creators start here</h2>
+        </div>
+        <div class="grid grid-4"><article class="card reveal" data-delay="0">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4M4.9 19.1l2.9-2.9M16.2 7.8l2.9-2.9"/></svg></div>
+                <h3>Professional from your first post</h3><p class="muted small">You launch looking like someone worth following, not like someone testing an idea.</p>
+            </article><article class="card reveal" data-delay="1">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg></div>
+                <h3>Present on every relevant platform</h3><p class="muted small">Set up properly across the five platforms where audiences actually discover creators.</p>
+            </article><article class="card reveal" data-delay="2">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 12h20M2 8h5M2 16h5M17 8h5M17 16h5"/></svg></div>
+                <h3>A real content buffer</h3><p class="muted small">25 finished videos means the schedule survives the first busy week.</p>
+            </article><article class="card reveal" data-delay="3">
+                <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+                <h3>Production that scales</h3><p class="muted small">AI tools training turns a six-hour edit into a manageable routine.</p>
+            </article></div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap narrow">
+        <div class="section-head">
+            <p class="eyebrow reveal">Plan FAQs</p>
+            <h2 class="mt-2 reveal">Before you commit</h2>
+        </div>
+        <div class="faq">
+        <div class="faq__item">
+            <h3 style="font-size:inherit;font-weight:inherit">
+                <button class="faq__q" type="button" id="contentcreationstarterplan-q1"
+                        aria-expanded="false" aria-controls="contentcreationstarterplan-a1">
+                    <span>How much does the Content Creator Starter Plan cost?</span><span class="ico" aria-hidden="true"></span>
+                </button>
+            </h3>
+            <div class="faq__a" id="contentcreationstarterplan-a1" role="region" aria-labelledby="contentcreationstarterplan-q1" data-open="false">
+                <div><p>It is quoted individually, because footage volume and editing depth vary. Send a short brief about your niche and format and you will get a written quote within one business day.</p></div>
             </div>
         </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="section timeline">
-        <div class="container">
-            <h2 class="section-title">Creator Success Timeline</h2>
-            <div class="timeline-grid">
-                <div class="timeline-item">
-                    <div class="timeline-week">Week 1</div>
-                    <ul class="timeline-tasks">
-                        <li>All social media accounts setup and optimization</li>
-                        <li>Brand identity and visual consistency across platforms</li>
-                        <li>Content strategy development and planning</li>
-                    </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-week">Week 2</div>
-                    <ul class="timeline-tasks">
-                        <li>Video content production begins</li>
-                        <li>AI tools training sessions start</li>
-                        <li>Platform-specific optimization</li>
-                    </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-week">Week 3</div>
-                    <ul class="timeline-tasks">
-                        <li>Video editing and post-production</li>
-                        <li>Advanced AI tools training</li>
-                        <li>Content calendar creation</li>
-                    </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-week">Week 4</div>
-                    <ul class="timeline-tasks">
-                        <li>Final video deliverables</li>
-                        <li>Strategy consultation and roadmap delivery</li>
-                        <li>Launch preparation and ongoing support setup</li>
-                    </ul>
-                </div>
+        <div class="faq__item">
+            <h3 style="font-size:inherit;font-weight:inherit">
+                <button class="faq__q" type="button" id="contentcreationstarterplan-q2"
+                        aria-expanded="false" aria-controls="contentcreationstarterplan-a2">
+                    <span>Do I need to provide the footage for the 25 videos?</span><span class="ico" aria-hidden="true"></span>
+                </button>
+            </h3>
+            <div class="faq__a" id="contentcreationstarterplan-a2" role="region" aria-labelledby="contentcreationstarterplan-q2" data-open="false">
+                <div><p>Yes — the package covers editing, not filming. We will tell you exactly what to shoot and how, which is usually the part new creators get wrong.</p></div>
             </div>
         </div>
-    </section>
-
-    <!-- AI Tools Section -->
-    <section class="section ai-tools">
-        <div class="container">
-            <h2 class="section-title">AI Tools &amp; Training</h2>
-            <p class="section-subtitle">Master cutting-edge AI tools that give you a competitive advantage in content
-                creation</p>
-            <div class="ai-tools-grid">
-                <div class="ai-tool-card">
-                    <h3 class="ai-tool-name">Content Generation AI</h3>
-                    <p>Learn to use AI for ideas, scripts, and captions</p>
-                </div>
-                <div class="ai-tool-card">
-                    <h3 class="ai-tool-name">Video Editing AI</h3>
-                    <p>AI-powered editing tools and techniques</p>
-                </div>
-                <div class="ai-tool-card">
-                    <h3 class="ai-tool-name">Thumbnail Creation AI</h3>
-                    <p>AI tools for eye-catching thumbnail design</p>
-                </div>
-                <div class="ai-tool-card">
-                    <h3 class="ai-tool-name">SEO Optimization AI</h3>
-                    <p>AI for hashtags, titles, and descriptions</p>
-                </div>
-                <div class="ai-tool-card">
-                    <h3 class="ai-tool-name">Analytics &amp; Growth AI</h3>
-                    <p>AI tools for performance tracking and optimization</p>
-                </div>
+        <div class="faq__item">
+            <h3 style="font-size:inherit;font-weight:inherit">
+                <button class="faq__q" type="button" id="contentcreationstarterplan-q3"
+                        aria-expanded="false" aria-controls="contentcreationstarterplan-a3">
+                    <span>What if I only publish on one or two platforms?</span><span class="ico" aria-hidden="true"></span>
+                </button>
+            </h3>
+            <div class="faq__a" id="contentcreationstarterplan-a3" role="region" aria-labelledby="contentcreationstarterplan-q3" data-open="false">
+                <div><p>Then we concentrate the setup there instead of spreading it across five. Tell us where your audience is and we will adjust the scope and the quote.</p></div>
             </div>
         </div>
-    </section>
-
-    <!-- Value Section -->
-    <!-- <section class="section value-section">
-        <div class="container">
-            <h2 class="section-title">Pricing &amp; Creator Value</h2>
-            <div class="value-comparison">
-                <div class="value-card">
-                    <h3 class="value-title">Individual Services Value</h3>
-                    <div class="value-price">₹63,000+</div>
-                    <p>If purchased separately from different vendors</p>
-                </div>
-                <div class="value-card highlighted">
-                    <h3 class="value-title">Creator Starter Plan</h3>
-                    <div class="value-price">₹30,000</div>
-                    <span class="savings-badge">Save ₹33,000+</span>
-                    <p>Complete creator package with professional coordination</p>
-                </div>
+        <div class="faq__item">
+            <h3 style="font-size:inherit;font-weight:inherit">
+                <button class="faq__q" type="button" id="contentcreationstarterplan-q4"
+                        aria-expanded="false" aria-controls="contentcreationstarterplan-a4">
+                    <span>Which AI tools do you train on?</span><span class="ico" aria-hidden="true"></span>
+                </button>
+            </h3>
+            <div class="faq__a" id="contentcreationstarterplan-a4" role="region" aria-labelledby="contentcreationstarterplan-q4" data-open="false">
+                <div><p>The ones that fit your format — scripting, editing assistance, thumbnails, captions and planning. We prioritise tools you can keep using affordably rather than whatever is trending this month.</p></div>
             </div>
         </div>
-    </section> -->
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Become a Content Creator?</h2>
-                <p class="cta-text">Don't let another day pass without starting your creator journey. Your audience is
-                    waiting for your unique content and perspective.</p>
-                <div class="cta-buttons">
-                    <!-- <a href="#contact" class="cta-button">Start Creating Now - ₹30,000</a> -->
-                    <a href="contact.html" class="cta-button-secondary">Contact Us Today</a>
-                </div>
+        <div class="faq__item">
+            <h3 style="font-size:inherit;font-weight:inherit">
+                <button class="faq__q" type="button" id="contentcreationstarterplan-q5"
+                        aria-expanded="false" aria-controls="contentcreationstarterplan-a5">
+                    <span>What happens after the plan finishes?</span><span class="ico" aria-hidden="true"></span>
+                </button>
+            </h3>
+            <div class="faq__a" id="contentcreationstarterplan-a5" role="region" aria-labelledby="contentcreationstarterplan-q5" data-open="false">
+                <div><p>You have the profiles, the content buffer, the tools and the roadmap. Creators who want ongoing production usually move to a <a href="/pricing#creative">video editing package</a>.</p></div>
             </div>
         </div>
-    </section>
+    </div>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <!-- <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Launch Your Creator Career Today</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact CONSUMEIT</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <strong>Email:</strong><br>
-                            <a href="mailto:consumeit.services@gmail.com">consumeit.services@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
-                        <div>
-                            <strong>Website:</strong><br>
-                            <a href="http://www.consumeit.in" target="_blank">www.consumeit.in</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div>
-                            <strong>Tagline:</strong><br>
-                            Your Digital Growth Partner
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label class="form-label" for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="niche">Content Niche/Focus</label>
-                        <input type="text" id="niche" name="niche" class="form-input"
-                            placeholder="e.g., Lifestyle, Tech, Fashion, Business">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="message">Tell us about your creator goals</label>
-                        <textarea id="message" name="message" class="form-input form-textarea"
-                            placeholder="What type of content do you want to create? What are your main goals as a creator?"></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Start My Creator Journey!</button>
-                </form>
+<section class="section">
+    <div class="wrap">
+        <div class="cta-band reveal">
+            <p class="eyebrow" style="justify-content:center">Next step</p>
+            <h2 class="mt-1">Start publishing like you have been doing it for a year</h2>
+            <p class="lede mt-2">Tell us your niche, your format and where your audience is. You will get a written quote and a realistic view of what the first 90 days look like.</p>
+            <div class="btn-row mt-3">
+                <a class="btn btn--primary btn--lg" href="/contact"
+                   data-track="contact_click" data-track-location="content-creation-starter-plan-final">Start a project</a>
+                <a class="btn btn--ghost btn--lg" data-link="whatsapp" data-link-optional href="/contact"
+                   data-track="whatsapp_click" data-track-location="content-creation-starter-plan-final">Chat on WhatsApp</a>
+                <a class="btn btn--ghost btn--lg" href="/pricing"
+                   data-track="pricing_cta_click" data-track-location="content-creation-starter-plan-final">See pricing</a>
             </div>
         </div>
-    </section> -->
+    </div>
+</section>
 
-    <script>
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                        const counter = entry.target;
-                        const target = parseInt(counter.dataset.target);
-                        const increment = target / 50;
-                        let current = 0;
+</main>
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <a class="brand" href="/" aria-label="ConsumeIT — home">
+                    <img src="/assets/img/logo/white-logo.svg" alt="ConsumeIT" width="169" height="45" loading="lazy">
+                </a>
+                <p class="small muted mt-2" style="max-width:38ch">
+                    A technology and digital growth partner for businesses and creators — we build
+                    digital products, grow them with data-driven marketing, and automate the work
+                    behind them.
+                </p>
+                <ul class="mt-2" style="gap:.45rem">
+                    <li><a href="mailto:consumeit.services@gmail.com">consumeit.services@gmail.com</a></li>
+                    <li><a data-link="phone" data-link-optional href="/contact">Call us</a></li>
+                    <li class="small muted">Rohtak, Haryana, India</li>
+                </ul>
+            </div>
+            <nav aria-labelledby="f-svc">
+                <h2 id="f-svc">Services</h2>
+                <ul><li><a href="/services/web-development">Web &amp; app development</a></li><li><a href="/services/seo">SEO</a></li><li><a href="/services/digital-marketing">Digital marketing</a></li><li><a href="/services/ai-automation">AI &amp; automation</a></li><li><a href="/services/branding-design">Brand, design &amp; video</a></li></ul>
+            </nav>
+            <nav aria-labelledby="f-co">
+                <h2 id="f-co">Company</h2>
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/service">All services</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <nav aria-labelledby="f-reach">
+                <h2 id="f-reach">Where we work</h2>
+                <ul>
+                    <li><a href="/locations/india">Agency in India</a></li>
+                    <li><a href="/locations/global">International clients</a></li>
+                    <li><a data-social="linkedin" href="#">LinkedIn</a></li>
+                    <li><a data-social="instagram" href="#">Instagram</a></li>
+                    <li><a data-social="youtube" href="#">YouTube</a></li>
+                    <li><a data-social="x" href="#">X (Twitter)</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span data-year>2026</span> ConsumeIT. All rights reserved.</p>
+            <p>Built, grown and automated in-house.</p>
+        </div>
+    </div>
+</footer>
 
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(timer);
-                            }
-                            counter.textContent = Math.floor(current);
-                        }, 40);
-
-                        counter.classList.add('counted');
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            counters.forEach(counter => observer.observe(counter));
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            // Simple validation
-            if (!data.name || !data.email) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            // Create mailto link with form data
-            const subject = encodeURIComponent('Content Creator Starter Plan Inquiry - ' + data.name);
-            const body = encodeURIComponent(
-                `Name: ${data.name}\n` +
-                `Email: ${data.email}\n` +
-                `Phone: ${data.phone || 'Not provided'}\n` +
-                `Content Niche: ${data.niche || 'Not specified'}\n\n` +
-                `Creator Goals:\n${data.message || 'Interested in the Content Creator Starter Plan'}\n\n` +
-                `Plan: Content Creator Starter Plan (₹30,000)\n` +
-                `Services: 5 Platform Setup + 25 Videos + AI Training + Strategy`
-            );
-
-            const mailtoLink = `mailto:consumeit.services@gmail.com?subject=${subject}&body=${body}`;
-            window.open(mailtoLink);
-
-            // Show success message
-            alert('Thank you for your inquiry! Your email client should open with a pre-filled message. Please send it to complete your request.');
-
-            // Reset form
-            this.reset();
-        });
-
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and sections
-        document.querySelectorAll('.transform-card, .service-card, .benefit-card, .timeline-item, .ai-tool-card, .value-card').forEach(el => {
-            scrollObserver.observe(el);
-        });
-
-        // Add pulse animation to CTA buttons
-        setInterval(() => {
-            document.querySelectorAll('.cta-button').forEach(button => {
-                button.classList.add('pulse');
-                setTimeout(() => button.classList.remove('pulse'), 1000);
-            });
-        }, 8000);
-
-        // Header scroll effect
-        let lastScrollTop = 0;
-        const header = document.querySelector('.header');
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
-            }
-
-            lastScrollTop = scrollTop;
-        });
-
-        // Parallax effect for hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                const rate = scrolled * -0.5;
-                hero.style.backgroundPositionY = rate + 'px';
-            }
-        });
-
-        // Initialize animations
-        document.addEventListener('DOMContentLoaded', function () {
-            animateCounters();
-
-            // Add staggered animation to service cards
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-            });
-
-            // Add floating animation to what-is icon
-            const floatIcon = document.querySelector('.float');
-            if (floatIcon) {
-                setInterval(() => {
-                    floatIcon.style.transform = 'translateY(-10px)';
-                    setTimeout(() => {
-                        floatIcon.style.transform = 'translateY(0px)';
-                    }, 1500);
-                }, 3000);
-            }
-        });
-
-        // Add loading animation to form submission
-        document.getElementById('contactForm').addEventListener('submit', function () {
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            button.textContent = 'Sending...';
-            button.disabled = true;
-
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.disabled = false;
-            }, 2000);
-        });
-
-        // Add hover sound effect simulation
-        document.querySelectorAll('.cta-button, .service-card, .benefit-card').forEach(element => {
-            element.addEventListener('mouseenter', function () {
-                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-        });
-    </script>
+<a class="dock" id="dock" data-link="whatsapp" href="/contact"
+   data-track="whatsapp_click" data-track-location="dock"
+   aria-label="Chat with ConsumeIT on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a9.9 9.9 0 0 0-8.5 15L2 22l5.2-1.4A9.9 9.9 0 1 0 12 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 0 1 12 3.8Zm-3.2 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.6-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4Z"/></svg><span>Chat on WhatsApp</span>
+</a>
 </body>
-
 </html>
