@@ -1,0 +1,142 @@
+/* Info pages: pricing, FAQ, working from anywhere, Consumeit in India (in- prefix).
+   Tokens and kit classes (.ser .eyebrow .ix .sq .stick [data-scrub] [data-p]) come from site.css.
+   Flat colour. Motion is transform / opacity / stroke-dashoffset, mostly scroll-linked via --p.
+   Everything is visible and complete without JS and with reduced motion (--p defaults to 1). */
+
+/* Hero: big type left, lede right, no art */
+.in-hero { padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(3rem, 7vw, 6rem); }
+.in-hero .crumbs { margin-bottom: clamp(1.75rem, 4vw, 3rem); }
+.in-hero__grid { display: grid; gap: clamp(1.5rem, 4vw, 2.5rem); align-items: end; }
+@media (min-width: 900px) { .in-hero__grid { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 3rem 4rem; } }
+.in-hero__main { max-width: 16ch; font-size: clamp(2.6rem, 6vw, 4.75rem); line-height: 1.1; letter-spacing: -0.045em; }
+.in-hero__side .lede { max-width: 36ch; }
+.in-hero__side .btn-row { margin-top: 1.75rem; }
+.in-hero__main, .in-hero__side { animation: in-rise 0.8s var(--ease-out) both; }
+.in-hero__side { animation-delay: 0.14s; }
+.in-jump { list-style: none; margin-top: 1.75rem; border-top: 1px solid var(--text); }
+.in-jump a { display: flex; align-items: baseline; gap: 1rem; min-height: 44px; padding: 0.7rem 0.25rem; border-bottom: 1px solid var(--line-strong); font-weight: 500; }
+.in-jump a:hover, .in-jump a:focus-visible { background: var(--mint); }
+.in-jump__n { font: 400 0.8125rem var(--mono); color: var(--text-mute); }
+
+/* Sections */
+.in-sec { padding-block: clamp(3.5rem, 7vw, 6.5rem); }
+.in-head { display: grid; gap: 1rem; max-width: 44rem; margin-bottom: clamp(2rem, 4.5vw, 3.5rem); }
+.in-head .lede { max-width: 46ch; }
+.in-two { display: grid; gap: clamp(2rem, 5vw, 3rem); align-items: start; }
+.in-two__head { display: grid; gap: 1rem; align-content: start; }
+.in-two__head .stick { margin-top: 1rem; max-width: 18rem; }
+@media (min-width: 900px) {
+  .in-two { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem; }
+  .in-two__head { position: sticky; top: 7rem; }
+}
+.in-ix--dense .ix__t { font-size: clamp(1.25rem, 2.4vw, 1.65rem); }
+
+/* Pricing: the quote sheet. Rows draw themselves as they pass through the viewport. */
+.in-sheet { padding: clamp(1.25rem, 3vw, 2rem); background: var(--bg-warm); border: 1px solid var(--text); border-radius: 2px; }
+@media (min-width: 900px) { .in-sheet { transform: rotate(-0.7deg); } }
+.in-sheet__top { display: flex; justify-content: space-between; padding-bottom: 0.9rem; border-bottom: 1px dashed var(--line-strong); font: 400 0.8125rem var(--mono); color: var(--text-mute); }
+.in-row { display: grid; gap: 1rem 2rem; padding-block: 1.4rem; border-bottom: 1px solid var(--line); }
+@media (min-width: 640px) { .in-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; } }
+.in-row__t { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 0.75rem; }
+.in-row__t > :nth-child(n+3) { grid-column: 2; }
+.in-row__n { padding-top: 0.35em; font: 400 0.8125rem var(--mono); color: var(--text-mute); }
+.in-row h3 { font-size: 1.25rem; letter-spacing: -0.02em; }
+.in-row p { margin-top: 0.35rem; color: var(--text-soft); }
+.in-dial { width: 100%; height: auto; overflow: visible; }
+.in-rail, .in-fill { fill: none; stroke-linecap: round; }
+.in-rail { stroke: var(--text); stroke-width: 2; }
+.in-fill { stroke: var(--accent); stroke-width: 9; stroke-dasharray: 100; stroke-dashoffset: calc(100 * (1 - var(--p, 1) * var(--k, 0.5))); }
+.in-knob { fill: var(--surface); stroke: var(--text); stroke-width: 2.5; transform: translateX(calc(var(--p, 1) * var(--k, 0.5) * 284px)); }
+.in-k1 { --k: 0.62; } .in-k2 { --k: 0.4; } .in-k3 { --k: 0.84; }
+.in-ends { display: flex; justify-content: space-between; gap: 1rem; margin-top: 0.15rem; font-size: 0.8125rem; font-weight: 500; color: var(--text-mute); }
+.in-total { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px dashed var(--line-strong); }
+.in-total p { font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.35; }
+.in-total__k { display: block; font: 400 0.8125rem var(--mono); letter-spacing: 0; color: var(--text-mute); }
+.in-tick { flex: none; width: 3.5rem; height: 3.5rem; padding: 0.6rem; background: var(--accent); border-radius: var(--r-sm); transform: rotate(-5deg); }
+.in-tick path { fill: none; stroke: var(--text); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 100; stroke-dashoffset: calc(100 * (1 - var(--p, 1))); }
+
+/* Pricing: kept apart, as two loose notes */
+.in-notes { display: grid; gap: 2rem; }
+.in-notes .stick { max-width: 34rem; }
+.in-notes h3 { font-size: 1.35rem; letter-spacing: -0.02em; }
+.in-notes h3 + p { margin-top: 0.5rem; color: var(--text-soft); }
+@media (min-width: 760px) {
+  .in-notes { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.5rem; }
+  .in-notes__a { grid-column: 1 / span 6; }
+  .in-notes__b { grid-column: 7 / span 6; margin-top: 3rem; }
+}
+.in-after { margin-top: 2.5rem; font-size: 1.125rem; font-weight: 600; }
+
+/* Pricing: the four things, as a staircase of drawn rules */
+.in-scrub { max-width: 28ch; margin-bottom: clamp(2rem, 5vw, 3.5rem); font-size: clamp(1.5rem, 3.4vw, 2.6rem); line-height: 1.2; letter-spacing: -0.03em; font-weight: 600; }
+.in-steps { list-style: none; display: grid; }
+.in-steps li { position: relative; max-width: 40rem; padding: 1.1rem 0 1.1rem 3.5rem; color: var(--text-soft); }
+.in-steps li::before { content: ""; position: absolute; inset: 0 0 auto; height: 2px; background: var(--text); transform-origin: left center; transform: scaleX(var(--p, 1)); }
+.in-steps strong { display: block; font-size: 1.2rem; font-weight: 600; letter-spacing: -0.015em; color: var(--text); }
+.in-steps__n { position: absolute; left: 0; top: 1.4rem; font: 400 0.8125rem var(--mono); color: var(--text-mute); }
+@media (min-width: 900px) {
+  .in-steps li:nth-child(2) { margin-left: 3rem; }
+  .in-steps li:nth-child(3) { margin-left: 6rem; }
+  .in-steps li:nth-child(4) { margin-left: 9rem; }
+}
+.in-steps__after { margin-top: 1.5rem; color: var(--text-mute); }
+
+/* FAQ: calm typographic groups with large serif titles */
+.in-group { display: grid; gap: 1.75rem; align-items: start; }
+@media (min-width: 900px) {
+  .in-group { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem; }
+  .in-group__head { position: sticky; top: 7rem; }
+}
+.in-group__head { display: grid; gap: 0.9rem; align-content: start; justify-items: start; }
+.in-group__head p:not(.eyebrow) { max-width: 28ch; color: var(--text-soft); }
+.in-gt { font-family: var(--serif, "Instrument Serif", "Iowan Old Style", Georgia, serif); font-weight: 400; font-size: clamp(2.5rem, 6vw, 4.25rem); line-height: 1; letter-spacing: -0.02em; }
+.in-gt em { font-style: italic; }
+.in-gsec + .in-gsec { border-top: 1px solid var(--line); }
+.in-faq h3 { font-size: inherit; font-weight: inherit; letter-spacing: normal; line-height: inherit; }
+.in-faq .faq__q { padding-block: 1.4rem; font-size: clamp(1.1rem, 1.8vw, 1.3rem); font-weight: 500; letter-spacing: -0.02em; }
+.in-faq .faq__q:hover { color: var(--text); }
+.in-faq .faq__q:hover > span:first-child { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.in-faq .faq__a p { color: var(--text-soft); font-size: 1rem; }
+.in-faq .faq__a a { text-decoration: underline; text-underline-offset: 3px; }
+html:not(.js) .in-faq .faq__a { height: auto; }
+.in-ask { display: grid; }
+.in-ask .stick { max-width: 30rem; }
+@media (min-width: 900px) { .in-ask .stick { justify-self: end; margin-right: 4rem; } }
+.in-ask h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+.in-ask p { margin-top: 0.6rem; color: var(--text-soft); }
+.in-ask .arrow-link { margin-top: 1rem; }
+
+/* Working from anywhere: world of dots, one line drawn from You to Us */
+.in-map { position: relative; max-width: 62rem; margin: 0; }
+.in-map svg { width: 100%; height: auto; overflow: visible; }
+.in-dots { fill: none; stroke: var(--line-strong); stroke-width: 5; stroke-linecap: round; }
+.in-link { fill: none; stroke: var(--text); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: calc(100 * (1 - var(--p, 1))); }
+.in-you { fill: var(--text); }
+.in-us { fill: var(--accent); stroke: var(--text); stroke-width: 2.5; opacity: clamp(0, calc((var(--p, 1) - 0.8) * 5), 1); }
+.in-pin { position: absolute; padding: 0 0.4rem; background: var(--bg); font-size: clamp(0.8125rem, 1.6vw, 1rem); font-weight: 600; line-height: 1.5; white-space: nowrap; }
+.in-pin--you { left: 23.6%; top: 31.1%; transform: translate(-115%, -50%); }
+.in-pin--us { left: 71.7%; top: 43%; transform: translate(-50%, 85%); }
+.in-answer { display: grid; gap: 2rem; }
+@media (min-width: 900px) { .in-answer { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 4rem; align-items: end; } }
+.in-answer h2 { margin-top: 1rem; }
+.in-no { margin-bottom: 1.4rem; padding-bottom: 0.15em; font-family: var(--serif, "Instrument Serif", "Iowan Old Style", Georgia, serif); font-style: italic; font-size: clamp(4rem, 12vw, 8rem); line-height: 1; letter-spacing: -0.02em; }
+.in-answer p + p { margin-top: 0.75rem; }
+.in-answer p:not(.in-no):not(.eyebrow) { max-width: 46ch; color: var(--text-soft); }
+
+/* Consumeit in India */
+.in-note { margin-top: 1.5rem; color: var(--text-soft); }
+.in-note a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Final call to action (inside .band--ink) */
+.in-cta { max-width: 44rem; margin-inline: auto; text-align: center; }
+.in-cta h2 { font-weight: 700; letter-spacing: -0.04em; font-size: clamp(2rem, 5.4vw, 3.5rem); line-height: 1.08; }
+.in-cta .lede { margin: 1.25rem auto 0; max-width: 46ch; }
+.in-cta .btn-row { justify-content: center; margin-top: 2rem; }
+.in-cta__mail { margin-top: 1.75rem; font-size: 0.9375rem; color: var(--on-ink-mute); }
+.in-cta__mail a { color: var(--on-ink); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+
+@keyframes in-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+/* Reduced motion or paused: nothing moves, everything stays visible. */
+@media (prefers-reduced-motion: reduce) { .in-hero__main, .in-hero__side { animation: none; } }
+html[data-motion="paused"] .in-hero__main, html[data-motion="paused"] .in-hero__side { animation: none; }

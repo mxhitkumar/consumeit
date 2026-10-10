@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Consumeit - Company pages (about.html, contact.html). Every rule is
+   prefixed co-. Flat colour only, tokens from site.css, kit helpers (.ser,
+   .ix, .stick, .strike, [data-scrub], [data-p], [data-pointer]) come from the
+   shared kit. Motion: transform, opacity, stroke-dashoffset only, one-time.
+   Everything is complete without JS, with reduced motion and when paused.
+   ========================================================================== */
+
+/* ---- Hero ----------------------------------------------------------------- */
+.co-hero { padding-block: clamp(1.5rem, 3.5vw, 3rem) clamp(2.5rem, 5vw, 4.5rem); }
+.co-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+.co-hero__copy { display: grid; gap: 1.25rem; justify-items: start; }
+.co-hero h1 {
+  font-size: clamp(2.5rem, 6.2vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+.co-hero .lede { max-width: 46ch; }
+.co-hero .btn-row { margin-top: 0.5rem; }
+.co-hero__art { width: 100%; max-width: 380px; margin-inline: auto; }
+@media (min-width: 900px) {
+  .co-hero__inner { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 4rem; }
+  .co-hero__art { max-width: 440px; margin-inline: 0 auto; }
+}
+.co-hero__copy > * { animation: co-rise 0.7s var(--ease-out) both; }
+.co-hero__copy > :nth-child(2) { animation-delay: 0.06s; }
+.co-hero__copy > :nth-child(3) { animation-delay: 0.12s; }
+.co-hero__copy > :nth-child(4) { animation-delay: 0.2s; }
+.co-hero__copy > :nth-child(5) { animation-delay: 0.28s; }
+@keyframes co-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes co-draw { from { stroke-dashoffset: 100; } }
+
+/* ---- Hand-drawn circles (about) ------------------------------------------------ */
+.co-venn { width: 100%; height: auto; overflow: visible; }
+.co-venn__c {
+  fill: none; stroke: var(--text); stroke-width: 2.2;
+  stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 100 150;
+  animation: co-draw 1.6s var(--ease-out) both;
+}
+.co-venn__c--a { transform: translate(calc(var(--mx, 0) * -7px), calc(var(--my, 0) * -5px)); }
+.co-venn__c--b { transform: translate(calc(var(--mx, 0) * 7px), calc(var(--my, 0) * -5px)); animation-delay: 0.25s; }
+.co-venn__c--c { transform: translate(calc(var(--mx, 0) * 2px), calc(var(--my, 0) * 8px)); animation-delay: 0.5s; }
+.co-venn__b { fill: var(--accent); animation: co-pop 0.6s var(--ease-out) 1.1s both; }
+.co-venn__t { fill: var(--text); font: italic 24px "Instrument Serif", "Iowan Old Style", Georgia, serif; }
+.co-venn__core { fill: var(--on-accent); font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+@keyframes co-pop { from { opacity: 0; } }
+.co-cap {
+  margin-top: 0.75rem;
+  max-width: 24ch;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  color: var(--text-soft);
+  transform: rotate(-1.5deg);
+}
+
+/* ---- Statement (about) ---------------------------------------------------------- */
+.co-say__grid { display: grid; gap: 1.25rem; }
+.co-say__text {
+  max-width: 26em;
+  font-size: clamp(1.75rem, 4.3vw, 3.25rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+@media (min-width: 900px) {
+  .co-say__grid { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 2rem; }
+  .co-say__grid .eyebrow { align-self: start; padding-top: 1rem; }
+}
+
+/* ---- Section head with a margin note ------------------------------------------------- */
+.co-head { display: grid; gap: 1.5rem; margin-bottom: clamp(1.75rem, 4vw, 3rem); align-items: end; }
+.co-head h2 { margin-top: 0.75rem; }
+.co-head .lede { max-width: 30ch; }
+.co-head__note { max-width: 30ch; font-size: 0.9375rem; line-height: 1.5; }
+@media (min-width: 900px) {
+  .co-head { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); column-gap: 8%; }
+  .co-head__note { justify-self: start; margin-bottom: 0.5rem; }
+}
+.co-more { margin-top: clamp(1.75rem, 4vw, 2.5rem); }
+.co-how-note { max-width: 44ch; margin-top: clamp(2rem, 4vw, 3rem); font-size: 0.9375rem; }
+
+/* ---- Drawn path with numbered steps (about, contact) ------------------------------------ */
+.co-path { position: relative; margin-top: clamp(2rem, 5vw, 3.5rem); --q: clamp(0, calc(var(--p, 1) * 1.35), 1); }
+.co-path__list { list-style: none; display: grid; }
+.co-path__line { display: none; }
+.co-step {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  column-gap: 1rem;
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--line-strong);
+}
+.co-node {
+  grid-row: span 2;
+  display: grid; place-items: center;
+  width: 44px; height: 44px;
+  border: 2px solid var(--text);
+  border-radius: 52% 48% 55% 45% / 47% 56% 44% 53%;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--mono); font-size: 1rem; font-weight: 600;
+}
+.co-step h3 { align-self: center; font-size: 1.25rem; letter-spacing: -0.02em; }
+.co-step p { margin-top: 0.3rem; color: var(--text-soft); }
+@media (min-width: 900px) {
+  .co-path--4 .co-path__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .co-path--3 .co-path__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .co-path__line {
+    display: none; position: absolute; left: 0; top: 22px;
+    width: 100%; height: auto; overflow: visible;
+    transform: translateY(-50%);
+  }
+  .co-path__line path {
+    fill: none; stroke: var(--text); stroke-width: 2.2;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 100 150;
+    stroke-dashoffset: calc(100 * (1 - var(--q)));
+  }
+  .co-path__line .co-path__head {
+    stroke-dasharray: none; stroke-dashoffset: 0;
+    opacity: clamp(0, calc((var(--q) - 0.9) * 10), 1);
+  }
+  .co-step { display: block; border-top: 0; padding: 0 1.75rem 0 0; }
+  .co-node {
+    position: relative; margin-bottom: 1.25rem;
+    transform: scale(clamp(0.6, calc(0.6 + (var(--q) - var(--k, 0)) * 8), 1));
+    transform-origin: left center;
+  }
+  .co-step p { max-width: 28ch; }
+  .co-path--4 .co-step:nth-child(2) { --k: 0.25; }
+  .co-path--4 .co-step:nth-child(3) { --k: 0.5; }
+  .co-path--4 .co-step:nth-child(4) { --k: 0.75; }
+  .co-path--3 .co-step:nth-child(2) { --k: 0.33; }
+  .co-path--3 .co-step:nth-child(3) { --k: 0.66; }
+}
+
+/* ---- Contact: note and email ----------------------------------------------------------- */
+.co-hero__art--note { display: grid; justify-items: start; padding-left: 0.5rem; }
+.co-hero__stick { max-width: 21ch; font-size: 1.125rem; line-height: 1.4; }
+@media (min-width: 900px) { .co-hero__art--note { justify-items: center; } }
+.co-doodle { width: 64px; height: 48px; margin-bottom: 0.6rem; overflow: visible; }
+.co-doodle path {
+  fill: none; stroke: var(--text); stroke-width: 2.2;
+  stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 100 150;
+  animation: co-draw 1.2s var(--ease-out) 0.5s both;
+}
+.co-mail {
+  display: grid; gap: 0.6rem; justify-items: start;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  border-top: 1px solid var(--line-strong);
+}
+.co-mail__label { font-size: 0.9375rem; color: var(--text-mute); }
+.co-mail__row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; }
+.co-mail__addr {
+  position: relative; display: inline-block;
+  padding-bottom: 0.28em;
+  font-size: clamp(1.3rem, 5.4vw, 3.4rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+.co-uline { position: absolute; left: 0; bottom: 0; width: 100%; height: 14px; overflow: visible; }
+.co-uline path {
+  fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round;
+  stroke-dasharray: 100 150;
+  animation: co-draw 1s var(--ease-out) 0.5s both;
+}
+.co-mail__addr:hover .co-uline path { stroke: var(--text); }
+.co-copy[hidden] { display: none; }
+
+/* ---- Contact: form and notes ---------------------------------------------------------- */
+.co-contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "head" "form" "notes";
+  gap: 2rem;
+  align-items: start;
+}
+.co-contact__head { grid-area: head; }
+.co-contact__head h2 { margin-top: 0.75rem; font-size: clamp(1.75rem, 3.2vw, 2.4rem); }
+.co-form { grid-area: form; margin-top: 0; }
+.co-aside { grid-area: notes; }
+@media (min-width: 900px) {
+  .co-contact__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    grid-template-areas: "head form" "notes form";
+    grid-template-rows: auto 1fr;
+    column-gap: 6%;
+    row-gap: 2.5rem;
+  }
+}
+.co-form-intro { margin-top: 0.75rem; color: var(--text-soft); }
+.co-form .form-status[data-state="info"] { background: var(--mint); border-color: var(--mint-line); color: var(--text); }
+.co-mode { margin-top: 0.75rem; font-size: 0.9375rem; color: var(--text-soft); }
+.co-mode a, .co-notes a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.co-aside h2 { font-size: 1rem; color: var(--text-mute); font-weight: 600; letter-spacing: 0; }
+.co-notes { list-style: none; margin-top: 0.5rem; }
+.co-notes li {
+  padding-block: 0.9rem;
+  border-top: 1px solid var(--line-strong);
+  font-size: 0.9375rem; line-height: 1.5; color: var(--text-soft);
+}
+
+/* ---- Final call to action (about) ----------------------------------------------------- */
+.co-final__inner { display: grid; gap: 1.75rem; align-items: end; }
+.co-final h2 { max-width: 14ch; font-size: clamp(2.1rem, 5.2vw, 3.75rem); line-height: 1.04; }
+.co-final__side { display: grid; gap: 1.1rem; justify-items: start; }
+.co-final .lede { max-width: 42ch; }
+.co-final__mail { color: var(--on-ink-mute); overflow-wrap: anywhere; }
+.co-final__mail a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 900px) {
+  .co-final__inner { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 4rem; }
+}
+
+/* ---- Reduced motion or paused: everything drawn, nothing moving ----------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .co-hero__copy > *, .co-venn__c, .co-venn__b, .co-doodle path, .co-uline path { animation: none; }
+  .co-venn__c, .co-node { transform: none; }
+}
+html[data-motion="paused"] :is(.co-hero__copy > *, .co-venn__c, .co-venn__b, .co-doodle path, .co-uline path) { animation: none; }
+html[data-motion="paused"] :is(.co-venn__c, .co-node) { transform: none; }

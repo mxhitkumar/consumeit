@@ -1,0 +1,140 @@
+/* Services pages (sv- prefix). Tokens and the shared craft kit (.ser, .eyebrow,
+   .ix, .strike, .sq, .stick, [data-scrub], [data-p]) come from site.css.
+   Flat colour only. Motion is transform / opacity / stroke-dashoffset, finite,
+   and everything is complete without JS, under reduced motion and when paused. */
+
+/* Page header ------------------------------------------------------------ */
+.sv-hero { padding-block: clamp(1.5rem, 3.5vw, 3rem) clamp(3rem, 6vw, 5.5rem); }
+.sv-hero__grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+@media (min-width: 900px) { .sv-hero__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+.sv-hero h1 { margin-top: 1.5rem; max-width: 17ch; font-size: clamp(2.25rem, 5.2vw, 4rem); line-height: 1.04; }
+.sv-hero .lede { margin-top: 1.25rem; max-width: 44ch; }
+.sv-hero .btn-row { margin-top: 1.75rem; }
+.sv-mail { margin-top: 1rem; font-size: 0.9375rem; color: var(--text-mute); overflow-wrap: anywhere; }
+.sv-mail a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+.sv-hero__copy > * { animation: sv-rise 0.7s var(--ease-out) both; }
+.sv-hero__copy > :nth-child(2) { animation-delay: 0.08s; }
+.sv-hero__copy > :nth-child(3) { animation-delay: 0.16s; }
+.sv-hero__copy > :nth-child(4) { animation-delay: 0.24s; }
+.sv-hero__copy > :nth-child(5) { animation-delay: 0.32s; }
+
+/* One hand-drawn illustration per page (generated inline SVG, drawn once) */
+.sv-art { width: 100%; max-width: 30rem; justify-self: center; }
+.sv-svg { width: 100%; height: auto; overflow: visible; }
+.sv-svg .k { fill: none; stroke: var(--text); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sv-svg .g { stroke: var(--line-strong); stroke-width: 3; }
+.sv-svg .b { stroke-width: 5; }
+.sv-svg .ck { stroke-width: 3.5; }
+.sv-svg .fa { fill: var(--accent); }
+.sv-svg .fm { fill: var(--mint); }
+.sv-svg .fw { fill: var(--bg); }
+.sv-svg .fi { fill: var(--text); }
+.sv-svg .t { font: 600 16px var(--font); fill: var(--text); }
+.sv-svg .t.b { font-size: 13px; stroke: none; }
+.sv-svg .t.s { font-size: 10px; }
+.sv-svg .n { font: italic 400 19px "Instrument Serif", "Iowan Old Style", Georgia, serif; fill: var(--text-soft); }
+.sv-svg .cov { fill: var(--bg); transform-box: fill-box; transform-origin: right; transform: scaleX(0); animation: sv-type 1.1s steps(14) 0.7s both; }
+.sv-svg .ring { fill: none; stroke: var(--accent-ink); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; animation: sv-ping 1.4s var(--ease-out) 1.6s 2 both; }
+.sv-svg .dr { stroke-dasharray: 1; animation: sv-draw 0.9s var(--ease-out) both; }
+.sv-svg .po { animation: sv-pop 0.55s var(--ease-out) both; }
+.sv-svg .slide { animation: sv-slide 0.9s var(--ease-out) 0.7s both; }
+.sv-svg .play { animation: sv-play 1.8s var(--ease) 1s both; }
+.sv-svg .knob { transform: translate(420px, 224px); animation: sv-knob 1.4s var(--ease-out) 1.2s both; }
+.d0 { animation-delay: 0.1s; } .d1 { animation-delay: 0.3s; } .d2 { animation-delay: 0.45s; } .d3 { animation-delay: 0.6s; }
+.d4 { animation-delay: 0.75s; } .d5 { animation-delay: 0.9s; } .d6 { animation-delay: 1.05s; } .d7 { animation-delay: 1.2s; } .d8 { animation-delay: 1.35s; }
+
+/* Sections on a 3 / 9 rail: eyebrow and labels left, the work right */
+.sv-sec { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.sv-sec--lead { padding-block: clamp(1rem, 2vw, 1.5rem) clamp(3rem, 7vw, 5.5rem); }
+.sv-rail { display: grid; gap: 1.25rem; }
+@media (min-width: 900px) { .sv-rail { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 3rem; } }
+.sv-rail__h { padding-top: 0.5rem; }
+.sv-rail__m > h2 { margin-bottom: 1.5rem; max-width: 22ch; }
+.sv-rail__m > .lede { margin: -0.5rem 0 1.5rem; max-width: 46ch; }
+.sv-small { font-size: clamp(1.35rem, 2.4vw, 1.75rem); letter-spacing: -0.025em; }
+.sv-head { display: grid; gap: 1rem; max-width: 40rem; margin-bottom: clamp(2rem, 4.5vw, 3rem); }
+
+/* Opening statement: words fade in as it scrolls (kit [data-scrub]) */
+.sv-lead { font-size: clamp(1.55rem, 3.3vw, 2.6rem); line-height: 1.22; letter-spacing: -0.028em; font-weight: 600; max-width: 30em; }
+
+/* What you get: ruled groups, dash marks instead of tick chips */
+.sv-groups { margin-top: 2rem; }
+.sv-grp { display: grid; gap: 1rem 2.5rem; padding-block: 1.75rem; border-top: 1px solid var(--line-strong); }
+.sv-grp:last-child { border-bottom: 1px solid var(--line-strong); }
+@media (min-width: 720px) { .sv-grp { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+.sv-grp h3 { font-size: 1.3rem; letter-spacing: -0.02em; }
+.sv-grp p { margin-top: 0.4rem; font-size: 0.9375rem; color: var(--text-mute); max-width: 30ch; }
+.sv-list { list-style: none; display: grid; gap: 0.75rem 2.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); align-content: start; }
+.sv-list li { position: relative; padding-left: 1.5rem; line-height: 1.45; color: var(--text-soft); }
+.sv-list li::before { content: ""; position: absolute; left: 0; top: 0.75em; width: 0.8rem; height: 2px; background: var(--text); transform: rotate(-8deg); }
+
+/* How we do it: a drawn path that grows with the scroll (kit [data-p]) */
+.sv-path { position: relative; }
+.sv-path::before { content: ""; position: absolute; left: 1.5rem; top: 1.5rem; bottom: 1.5rem; width: 2px; background: var(--text); transform-origin: top; transform: scaleY(var(--p, 1)); }
+.sv-path__l { display: none; }
+.sv-steps { position: relative; list-style: none; display: grid; gap: 2rem; }
+.sv-step { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0 1.1rem; }
+.sv-step__n { display: grid; place-items: center; width: 3rem; height: 3rem; background: var(--accent); color: var(--on-accent); border: 2px solid var(--text); border-radius: 52% 48% 50% 50% / 50% 52% 48% 50%; font: 700 1.1rem var(--mono); }
+.sv-step:nth-child(even) .sv-step__n { border-radius: 48% 52% 50% 50% / 52% 48% 50% 50%; }
+.sv-step h3 { padding-top: 0.35rem; font-size: 1.3rem; letter-spacing: -0.02em; }
+.sv-step p { margin-top: 0.4rem; color: var(--text-soft); max-width: 30ch; }
+.sv-step { opacity: clamp(0.3, calc((var(--p, 1) - var(--s, 0)) * 6), 1); }
+.sv-step:nth-child(2) { --s: 0.2; }
+.sv-step:nth-child(3) { --s: 0.42; }
+.sv-step:nth-child(4) { --s: 0.64; }
+@media (min-width: 720px) {
+  .sv-path::before { display: none; }
+  .sv-path__l { display: block; position: absolute; left: 0; top: 1.5rem; width: 100%; height: auto; translate: 0 -50%; }
+  .sv-path__l path { fill: none; stroke: var(--text); stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--p, 1)); }
+  .sv-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+  .sv-step { display: block; }
+  .sv-step__n { margin-bottom: 1.25rem; }
+  .sv-step h3 { padding-top: 0; }
+}
+
+/* Good to know: sticky notes, a little off-square (kit .stick) */
+.sv-notes { list-style: none; display: grid; gap: 1.75rem 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+@media (min-width: 900px) { .sv-notes li:nth-child(even) { margin-top: 1.75rem; } }
+.sv-notes .stick { height: 100%; }
+.sv-notes h3 { font-size: 1.1rem; letter-spacing: -0.02em; }
+.sv-notes p { margin-top: 0.4rem; color: var(--text-soft); }
+
+/* FAQ (accordion markup and script come from site.css and site.js) */
+.sv-faq h3 { font-size: inherit; font-weight: inherit; letter-spacing: normal; line-height: inherit; }
+.sv-faq .faq__q { font-weight: 600; }
+html:not(.js) .sv-faq .faq__a { height: auto; }
+html:not(.js) .sv-faq .ico { display: none; }
+
+/* Hub: grouped index of the ten services */
+.sv-gblock { margin-top: clamp(2.25rem, 4.5vw, 3.25rem); }
+.sv-gh { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: 0.9rem; }
+.sv-gh h3 { font-size: 1.15rem; letter-spacing: -0.02em; }
+.sv-gh span { font-size: 0.875rem; color: var(--text-mute); }
+.sv-strip { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 900px) { .sv-strip { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 4rem; } }
+.sv-strip h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); letter-spacing: -0.035em; }
+.sv-strip__r { display: grid; gap: 1.75rem; justify-items: start; }
+.sv-strip .stick { max-width: 26rem; font-size: 1.125rem; }
+
+/* Final call to action (the one ink band) */
+.sv-cta { display: grid; gap: 2rem; align-items: end; }
+@media (min-width: 900px) { .sv-cta { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 4rem; } }
+.sv-cta h2 { font-size: clamp(2.2rem, 5.2vw, 3.9rem); line-height: 1.05; letter-spacing: -0.04em; max-width: 14ch; }
+.sv-cta .btn-row { margin-top: 1.5rem; }
+.sv-cta__mail { margin-top: 1.5rem; font-size: 0.9375rem; color: var(--on-ink-mute); }
+.sv-cta__mail a { color: var(--on-ink); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+
+@keyframes sv-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes sv-draw { from { stroke-dashoffset: 1; opacity: 0; } 1% { opacity: 1; } to { stroke-dashoffset: 0; opacity: 1; } }
+@keyframes sv-pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes sv-slide { from { opacity: 0; transform: translateX(-70px); } to { opacity: 1; transform: none; } }
+@keyframes sv-play { from { transform: translateX(-70px); } to { transform: none; } }
+@keyframes sv-knob { from { transform: translate(350px, 224px); } to { transform: translate(420px, 224px); } }
+@keyframes sv-type { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@keyframes sv-ping { from { opacity: 0.9; transform: scale(0.5); } to { opacity: 0; transform: scale(1.3); } }
+
+/* Reduced motion or paused: nothing moves, everything is drawn and visible. */
+@media (prefers-reduced-motion: reduce) {
+  .sv-hero__copy > *, .sv-svg * { animation: none !important; }
+}
+html[data-motion="paused"] .sv-hero__copy > *, html[data-motion="paused"] .sv-svg * { animation: none !important; }

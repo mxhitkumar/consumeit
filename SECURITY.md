@@ -5,7 +5,12 @@ below, **exactly one** has a real HTML equivalent. The rest must be configured
 at the server or CDN, and this document gives you ready-to-paste configuration
 for each platform.
 
-`render.yaml` in this repository already implements all of them for Render.
+`render.yaml` in this repository defines all of them for Render, **but Render only
+reads it when the service is Blueprint-managed.** When last checked (October 2026)
+the live site was not sending these headers (only `X-Content-Type-Options`), so the
+service was probably created in the dashboard. Either connect the repo as a
+Blueprint or paste the rules into Dashboard → Settings → Headers, then verify with
+`curl -sI https://www.consumeit.in/`.
 
 ---
 
